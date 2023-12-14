@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HaftalıkYemek">
+    <Key>
+      <PropertyRef Name="haftalıkYemekID" />
+    </Key>
+    <Property Name="haftalıkYemekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="haftaNumarası" Type="Int32" />
+    <Property Name="yemekID" Type="Int32" />
+    <Property Name="hGün1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hGün2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hGün3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hGün4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hGün5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hGün6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hGün7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Yemek" Relationship="Self.FK_HaftalıkYemek_Yemek" FromRole="HaftalıkYemek" ToRole="Yemek" />
+  </EntityType>
+  <EntityType Name="Ögrenci">
+    <Key>
+      <PropertyRef Name="ögrenciID" />
+    </Key>
+    <Property Name="ögrenciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ÖgrenciAd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ögrenciSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ögrenciNumarası" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ögrenciSifre" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ögrenciBakiyeID" Type="Int32" />
+    <Property Name="ögrenciDurum" Type="Boolean" />
+    <NavigationProperty Name="ögrenciBakiye" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="Ögrenci" ToRole="ögrenciBakiye" />
+  </EntityType>
+  <EntityType Name="ögrenciBakiye">
+    <Key>
+      <PropertyRef Name="ögrenciBakiyeID" />
+    </Key>
+    <Property Name="ögrenciBakiyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ögrenciBakiye1" Type="Int16" />
+    <Property Name="ögrenciBakiyeYüklemeTarih" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Ögrenci" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="ögrenciBakiye" ToRole="Ögrenci" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="PersonleID" />
+    </Key>
+    <Property Name="PersonleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="personelAD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PersonleSoyad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelGmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelSifre" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelYetkiID" Type="Int32" />
+    <NavigationProperty Name="PersonelYetki" Relationship="Self.FK_Personel_PersonelYetki" FromRole="Personel" ToRole="PersonelYetki" />
+  </EntityType>
+  <EntityType Name="PersonelYetki">
+    <Key>
+      <PropertyRef Name="personelYetkiID" />
+    </Key>
+    <Property Name="personelYetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelYetkiTür" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_PersonelYetki" FromRole="PersonelYetki" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Yemek">
+    <Key>
+      <PropertyRef Name="YemekID" />
+    </Key>
+    <Property Name="YemekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Yemekisim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YemekKalori" Type="Int16" />
+    <Property Name="Yemekfiyat" Type="Int16" />
+    <Property Name="yemekMiktar" Type="Int32" />
+    <NavigationProperty Name="HaftalıkYemek" Relationship="Self.FK_HaftalıkYemek_Yemek" FromRole="Yemek" ToRole="HaftalıkYemek" />
+  </EntityType>
+  <Association Name="FK_HaftalıkYemek_Yemek">
+    <End Role="Yemek" Type="Self.Yemek" Multiplicity="0..1" />
+    <End Role="HaftalıkYemek" Type="Self.HaftalıkYemek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yemek">
+        <PropertyRef Name="YemekID" />
+      </Principal>
+      <Dependent Role="HaftalıkYemek">
+        <PropertyRef Name="yemekID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ögrenci_ögrenciBakiye">
+    <End Role="ögrenciBakiye" Type="Self.ögrenciBakiye" Multiplicity="0..1" />
+    <End Role="Ögrenci" Type="Self.Ögrenci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ögrenciBakiye">
+        <PropertyRef Name="ögrenciBakiyeID" />
+      </Principal>
+      <Dependent Role="Ögrenci">
+        <PropertyRef Name="ögrenciBakiyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_PersonelYetki">
+    <End Role="PersonelYetki" Type="Self.PersonelYetki" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonelYetki">
+        <PropertyRef Name="personelYetkiID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="PersonelYetkiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Yemekhane_OtomasyonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HaftalıkYemek" EntityType="Self.HaftalıkYemek" />
+    <EntitySet Name="Ögrenci" EntityType="Self.Ögrenci" />
+    <EntitySet Name="ögrenciBakiye" EntityType="Self.ögrenciBakiye" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" />
+    <EntitySet Name="PersonelYetki" EntityType="Self.PersonelYetki" />
+    <EntitySet Name="Yemek" EntityType="Self.Yemek" />
+    <AssociationSet Name="FK_HaftalıkYemek_Yemek" Association="Self.FK_HaftalıkYemek_Yemek">
+      <End Role="Yemek" EntitySet="Yemek" />
+      <End Role="HaftalıkYemek" EntitySet="HaftalıkYemek" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ögrenci_ögrenciBakiye" Association="Self.FK_Ögrenci_ögrenciBakiye">
+      <End Role="ögrenciBakiye" EntitySet="ögrenciBakiye" />
+      <End Role="Ögrenci" EntitySet="Ögrenci" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_PersonelYetki" Association="Self.FK_Personel_PersonelYetki">
+      <End Role="PersonelYetki" EntitySet="PersonelYetki" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

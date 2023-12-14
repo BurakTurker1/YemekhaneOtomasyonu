@@ -1,0 +1,16 @@
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\YemekhaneOtomasyonu.exe.config
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\YemekhaneOtomasyonu.exe
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\YemekhaneOtomasyonu.pdb
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.csproj.AssemblyReference.cache
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_giriş.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.Properties.Resources.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.csproj.GenerateResource.cache
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.csproj.CoreCompileInputs.cache
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.exe
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.pdb
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\EntityFramework.dll
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.dll
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\EntityFramework.xml
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_ögrenci_giris.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.csproj.CopyComplete
