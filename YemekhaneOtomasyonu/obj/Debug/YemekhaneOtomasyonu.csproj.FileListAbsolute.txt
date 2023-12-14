@@ -15,3 +15,5 @@ D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\b
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_ögrenci_giris.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.csproj.CopyComplete
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_ögrenci_kayıt.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_personel_Giris.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_personel_menu.resources
