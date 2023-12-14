@@ -47,6 +47,9 @@
     <Property Name="PersonelGmail" Type="varchar(max)" />
     <Property Name="PersonelSifre" Type="varchar" MaxLength="16" />
     <Property Name="PersonelYetkiID" Type="int" />
+    <Property Name="PersonelCinsiyet" Type="varchar" MaxLength="5" />
+    <Property Name="personelDogumYıl" Type="int" />
+    <Property Name="PersonelTCNo" Type="varchar" MaxLength="11" />
   </EntityType>
   <EntityType Name="PersonelYetki">
     <Key>

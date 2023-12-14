@@ -44,6 +44,9 @@
     <EntitySetMapping Name="Personel">
       <EntityTypeMapping TypeName="Model.Personel">
         <MappingFragment StoreEntitySet="Personel">
+          <ScalarProperty Name="PersonelTCNo" ColumnName="PersonelTCNo" />
+          <ScalarProperty Name="personelDogumYıl" ColumnName="personelDogumYıl" />
+          <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
           <ScalarProperty Name="PersonleID" ColumnName="PersonleID" />
           <ScalarProperty Name="personelAD" ColumnName="personelAD" />
           <ScalarProperty Name="PersonleSoyad" ColumnName="PersonleSoyad" />

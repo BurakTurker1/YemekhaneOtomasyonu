@@ -38,7 +38,7 @@
             // 
             // btn_geri
             // 
-            this.btn_geri.Location = new System.Drawing.Point(510, 283);
+            this.btn_geri.Location = new System.Drawing.Point(450, 246);
             this.btn_geri.Name = "btn_geri";
             this.btn_geri.Size = new System.Drawing.Size(81, 38);
             this.btn_geri.TabIndex = 11;
@@ -48,7 +48,7 @@
             // 
             // txt_sifre
             // 
-            this.txt_sifre.Location = new System.Drawing.Point(398, 225);
+            this.txt_sifre.Location = new System.Drawing.Point(338, 188);
             this.txt_sifre.Name = "txt_sifre";
             this.txt_sifre.Size = new System.Drawing.Size(128, 32);
             this.txt_sifre.TabIndex = 10;
@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(321, 228);
+            this.label2.Location = new System.Drawing.Point(261, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
             this.label2.TabIndex = 9;
@@ -64,7 +64,7 @@
             // 
             // btn_personel_giris
             // 
-            this.btn_personel_giris.Location = new System.Drawing.Point(398, 283);
+            this.btn_personel_giris.Location = new System.Drawing.Point(338, 246);
             this.btn_personel_giris.Name = "btn_personel_giris";
             this.btn_personel_giris.Size = new System.Drawing.Size(97, 38);
             this.btn_personel_giris.TabIndex = 8;
@@ -74,7 +74,7 @@
             // 
             // txt_Eposta
             // 
-            this.txt_Eposta.Location = new System.Drawing.Point(398, 174);
+            this.txt_Eposta.Location = new System.Drawing.Point(338, 137);
             this.txt_Eposta.Name = "txt_Eposta";
             this.txt_Eposta.Size = new System.Drawing.Size(128, 32);
             this.txt_Eposta.TabIndex = 7;
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Location = new System.Drawing.Point(298, 177);
+            this.label1.Location = new System.Drawing.Point(238, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 24);
             this.label1.TabIndex = 6;

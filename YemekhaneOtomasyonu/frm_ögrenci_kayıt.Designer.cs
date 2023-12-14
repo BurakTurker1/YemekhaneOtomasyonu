@@ -38,11 +38,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_öğrenci_NO = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.txt_sifre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txt_öğrenci_NO = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,21 +144,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ögrenci Kayıt";
             // 
-            // txt_öğrenci_NO
+            // button2
             // 
-            this.txt_öğrenci_NO.Location = new System.Drawing.Point(176, 270);
-            this.txt_öğrenci_NO.Name = "txt_öğrenci_NO";
-            this.txt_öğrenci_NO.Size = new System.Drawing.Size(146, 32);
-            this.txt_öğrenci_NO.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 273);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 24);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Öğrenci No:";
+            this.button2.Location = new System.Drawing.Point(307, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 46);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Geri";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_sifre
             // 
@@ -176,15 +170,21 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Şifre:";
             // 
-            // button2
+            // txt_öğrenci_NO
             // 
-            this.button2.Location = new System.Drawing.Point(307, 390);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 46);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Geri";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.txt_öğrenci_NO.Location = new System.Drawing.Point(176, 270);
+            this.txt_öğrenci_NO.Name = "txt_öğrenci_NO";
+            this.txt_öğrenci_NO.Size = new System.Drawing.Size(146, 32);
+            this.txt_öğrenci_NO.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 273);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Öğrenci No:";
             // 
             // frm_ögrenci_kayıt
             // 
@@ -194,7 +194,7 @@
             this.ClientSize = new System.Drawing.Size(1066, 634);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ögrenci_kayıt";
             this.Text = "frm_ögrenci_kayıt";
             this.Load += new System.EventHandler(this.frm_ögrenci_kayıt_Load);

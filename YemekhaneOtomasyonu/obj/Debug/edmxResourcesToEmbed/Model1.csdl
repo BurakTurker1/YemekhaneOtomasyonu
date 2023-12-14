@@ -51,6 +51,9 @@
     <Property Name="PersonelSifre" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
     <Property Name="PersonelYetkiID" Type="Int32" />
     <NavigationProperty Name="PersonelYetki" Relationship="Self.FK_Personel_PersonelYetki" FromRole="Personel" ToRole="PersonelYetki" />
+    <Property Name="PersonelCinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="personelDogumYıl" Type="Int32" />
+    <Property Name="PersonelTCNo" Type="String" Unicode="false" MaxLength="11" FixedLength="false" />
   </EntityType>
   <EntityType Name="PersonelYetki">
     <Key>

@@ -67,6 +67,12 @@
     <Compile Include="frm_giriş.Designer.cs">
       <DependentUpon>frm_giriş.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_personel_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_Ekle.Designer.cs">
+      <DependentUpon>frm_personel_Ekle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_personel_Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="frm_personel_menu.Designer.cs">
       <DependentUpon>frm_personel_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sıfre_degıs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sıfre_degıs.Designer.cs">
+      <DependentUpon>frm_sıfre_degıs.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_yemek_al.cs">
       <SubType>Form</SubType>
@@ -126,6 +138,11 @@
     <Compile Include="Yemek.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Yemekhane_OtomasyonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Yemekhane_OtomasyonDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ögrenci.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -134,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="frm_giriş.resx">
       <DependentUpon>frm_giriş.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personel_Ekle.resx">
+      <DependentUpon>frm_personel_Ekle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_personel_Giris.resx">
       <DependentUpon>frm_personel_Giris.cs</DependentUpon>
@@ -177,6 +197,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Yemekhane_OtomasyonDataSet.xsc">
+      <DependentUpon>Yemekhane_OtomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Yemekhane_OtomasyonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Yemekhane_OtomasyonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Yemekhane_OtomasyonDataSet.xss">
+      <DependentUpon>Yemekhane_OtomasyonDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

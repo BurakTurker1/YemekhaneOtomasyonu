@@ -52,6 +52,9 @@
           <Property Name="PersonelGmail" Type="varchar(max)" />
           <Property Name="PersonelSifre" Type="varchar" MaxLength="16" />
           <Property Name="PersonelYetkiID" Type="int" />
+          <Property Name="PersonelCinsiyet" Type="varchar" MaxLength="5" />
+          <Property Name="personelDogumYıl" Type="int" />
+          <Property Name="PersonelTCNo" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="PersonelYetki">
           <Key>
@@ -181,6 +184,9 @@
           <Property Name="PersonelSifre" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="PersonelYetkiID" Type="Int32" />
           <NavigationProperty Name="PersonelYetki" Relationship="Self.FK_Personel_PersonelYetki" FromRole="Personel" ToRole="PersonelYetki" />
+          <Property Name="PersonelCinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="personelDogumYıl" Type="Int32" />
+          <Property Name="PersonelTCNo" Type="String" Unicode="false" MaxLength="11" FixedLength="false" />
         </EntityType>
         <EntityType Name="PersonelYetki">
           <Key>
@@ -306,6 +312,9 @@
           <EntitySetMapping Name="Personel">
             <EntityTypeMapping TypeName="Model.Personel">
               <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="PersonelTCNo" ColumnName="PersonelTCNo" />
+                <ScalarProperty Name="personelDogumYıl" ColumnName="personelDogumYıl" />
+                <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
                 <ScalarProperty Name="PersonleID" ColumnName="PersonleID" />
                 <ScalarProperty Name="personelAD" ColumnName="personelAD" />
                 <ScalarProperty Name="PersonleSoyad" ColumnName="PersonleSoyad" />

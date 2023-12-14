@@ -27,11 +27,13 @@ namespace YemekhaneOtomasyonu
             int dogumYıl = Convert.ToInt16(txt_dogum_yıl.Text);
             string ögrenciNo = txt_öğrenci_NO.Text;
             string sifre = txt_sifre.Text;
+
             KPSPublicSoapClient kps = new KPSPublicSoapClient();
-            bool ÖgrenciVar = kps.TCKimlikNoDogrula(tcNo, ad, soyad, dogumYıl);
-            if (ÖgrenciVar == true)
+            bool GercekKisi = kps.TCKimlikNoDogrula(tcNo, ad, soyad, dogumYıl);
+            if (GercekKisi == true)
             {
                 Ögrenci yeniögrenci = new Ögrenci();
+                yeniögrenci.ögrenciTC =tcNo.ToString();
                 yeniögrenci.ögrenciDurum = true;
                 yeniögrenci.ögrenciNumarası =ögrenciNo.ToString();
                 yeniögrenci.ÖgrenciAd = ad;

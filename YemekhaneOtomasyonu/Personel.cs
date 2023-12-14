@@ -20,6 +20,9 @@ namespace YemekhaneOtomasyonu
         public string PersonelGmail { get; set; }
         public string PersonelSifre { get; set; }
         public Nullable<int> PersonelYetkiID { get; set; }
+        public string PersonelCinsiyet { get; set; }
+        public Nullable<int> personelDogumYıl { get; set; }
+        public string PersonelTCNo { get; set; }
     
         public virtual PersonelYetki PersonelYetki { get; set; }
     }
