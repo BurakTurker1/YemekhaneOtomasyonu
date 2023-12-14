@@ -26,6 +26,8 @@
     <Property Name="ögrenciSifre" Type="varchar" MaxLength="16" />
     <Property Name="ögrenciBakiyeID" Type="int" />
     <Property Name="ögrenciDurum" Type="bit" />
+    <Property Name="ögrenciTC" Type="varchar" MaxLength="11" />
+    <Property Name="ögrenciDoğumYıl" Type="varchar" MaxLength="4" />
   </EntityType>
   <EntityType Name="ögrenciBakiye">
     <Key>

@@ -28,6 +28,8 @@
     <Property Name="ögrenciBakiyeID" Type="Int32" />
     <Property Name="ögrenciDurum" Type="Boolean" />
     <NavigationProperty Name="ögrenciBakiye" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="Ögrenci" ToRole="ögrenciBakiye" />
+    <Property Name="ögrenciTC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="ögrenciDoğumYıl" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="ögrenciBakiye">
     <Key>

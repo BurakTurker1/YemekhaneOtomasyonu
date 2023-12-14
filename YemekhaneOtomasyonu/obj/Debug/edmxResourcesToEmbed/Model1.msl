@@ -20,6 +20,8 @@
     <EntitySetMapping Name="Ögrenci">
       <EntityTypeMapping TypeName="Model.Ögrenci">
         <MappingFragment StoreEntitySet="Ögrenci">
+          <ScalarProperty Name="ögrenciDoğumYıl" ColumnName="ögrenciDoğumYıl" />
+          <ScalarProperty Name="ögrenciTC" ColumnName="ögrenciTC" />
           <ScalarProperty Name="ögrenciID" ColumnName="ögrenciID" />
           <ScalarProperty Name="ÖgrenciAd" ColumnName="ÖgrenciAd" />
           <ScalarProperty Name="ögrenciSoyad" ColumnName="ögrenciSoyad" />

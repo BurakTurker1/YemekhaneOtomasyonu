@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_geri = new System.Windows.Forms.Button();
             this.btn_ögrenci_kayıt_ol = new System.Windows.Forms.Button();
-            this.lbl_mesaj = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +55,7 @@
             // 
             // btn_ögrenci_giris
             // 
-            this.btn_ögrenci_giris.Location = new System.Drawing.Point(334, 241);
+            this.btn_ögrenci_giris.Location = new System.Drawing.Point(334, 228);
             this.btn_ögrenci_giris.Name = "btn_ögrenci_giris";
             this.btn_ögrenci_giris.Size = new System.Drawing.Size(97, 38);
             this.btn_ögrenci_giris.TabIndex = 2;
@@ -82,7 +81,7 @@
             // 
             // btn_geri
             // 
-            this.btn_geri.Location = new System.Drawing.Point(446, 241);
+            this.btn_geri.Location = new System.Drawing.Point(446, 228);
             this.btn_geri.Name = "btn_geri";
             this.btn_geri.Size = new System.Drawing.Size(81, 38);
             this.btn_geri.TabIndex = 5;
@@ -92,21 +91,13 @@
             // 
             // btn_ögrenci_kayıt_ol
             // 
-            this.btn_ögrenci_kayıt_ol.Location = new System.Drawing.Point(334, 285);
+            this.btn_ögrenci_kayıt_ol.Location = new System.Drawing.Point(334, 272);
             this.btn_ögrenci_kayıt_ol.Name = "btn_ögrenci_kayıt_ol";
             this.btn_ögrenci_kayıt_ol.Size = new System.Drawing.Size(97, 38);
             this.btn_ögrenci_kayıt_ol.TabIndex = 6;
             this.btn_ögrenci_kayıt_ol.Text = "Kayıt Ol";
             this.btn_ögrenci_kayıt_ol.UseVisualStyleBackColor = true;
-            // 
-            // lbl_mesaj
-            // 
-            this.lbl_mesaj.AutoSize = true;
-            this.lbl_mesaj.Location = new System.Drawing.Point(330, 214);
-            this.lbl_mesaj.Name = "lbl_mesaj";
-            this.lbl_mesaj.Size = new System.Drawing.Size(60, 24);
-            this.lbl_mesaj.TabIndex = 7;
-            this.lbl_mesaj.Text = "label3";
+            this.btn_ögrenci_kayıt_ol.Click += new System.EventHandler(this.btn_ögrenci_kayıt_ol_Click);
             // 
             // frm_ögrenci_giris
             // 
@@ -114,7 +105,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(114)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(787, 383);
-            this.Controls.Add(this.lbl_mesaj);
             this.Controls.Add(this.btn_ögrenci_kayıt_ol);
             this.Controls.Add(this.btn_geri);
             this.Controls.Add(this.txt_sifre);
@@ -141,6 +131,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_geri;
         private System.Windows.Forms.Button btn_ögrenci_kayıt_ol;
-        private System.Windows.Forms.Label lbl_mesaj;
     }
 }

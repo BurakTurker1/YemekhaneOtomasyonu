@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="HaftalıkYemek">
           <Key>
             <PropertyRef Name="haftalıkYemekID" />
@@ -31,6 +31,8 @@
           <Property Name="ögrenciSifre" Type="varchar" MaxLength="16" />
           <Property Name="ögrenciBakiyeID" Type="int" />
           <Property Name="ögrenciDurum" Type="bit" />
+          <Property Name="ögrenciTC" Type="varchar" MaxLength="11" />
+          <Property Name="ögrenciDoğumYıl" Type="varchar" MaxLength="4" />
         </EntityType>
         <EntityType Name="ögrenciBakiye">
           <Key>
@@ -124,8 +126,7 @@
             <End Role="Personel" EntitySet="Personel" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -157,6 +158,8 @@
           <Property Name="ögrenciBakiyeID" Type="Int32" />
           <Property Name="ögrenciDurum" Type="Boolean" />
           <NavigationProperty Name="ögrenciBakiye" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="Ögrenci" ToRole="ögrenciBakiye" />
+          <Property Name="ögrenciTC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="ögrenciDoğumYıl" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ögrenciBakiye">
           <Key>
@@ -279,6 +282,8 @@
           <EntitySetMapping Name="Ögrenci">
             <EntityTypeMapping TypeName="Model.Ögrenci">
               <MappingFragment StoreEntitySet="Ögrenci">
+                <ScalarProperty Name="ögrenciDoğumYıl" ColumnName="ögrenciDoğumYıl" />
+                <ScalarProperty Name="ögrenciTC" ColumnName="ögrenciTC" />
                 <ScalarProperty Name="ögrenciID" ColumnName="ögrenciID" />
                 <ScalarProperty Name="ÖgrenciAd" ColumnName="ÖgrenciAd" />
                 <ScalarProperty Name="ögrenciSoyad" ColumnName="ögrenciSoyad" />

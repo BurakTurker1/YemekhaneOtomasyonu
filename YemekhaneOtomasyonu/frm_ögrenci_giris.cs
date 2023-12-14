@@ -39,7 +39,10 @@ namespace YemekhaneOtomasyonu
             Ögrenci ögrenci = vt.Ögrenci.FirstOrDefault(p => p.ögrenciNumarası == ögrenciNo && p.ögrenciSifre == ögrenciSifre);
             if (ögrenci != null)
             {
-                lbl_mesaj.Text = "Giriş Başarılı";
+               MessageBox.Show("Giriş Başarılı");
+                frm_yemek_al frm = new frm_yemek_al();
+                frm.Show();
+                this.Hide();
                 
             }
             else
@@ -47,6 +50,13 @@ namespace YemekhaneOtomasyonu
                 MessageBox.Show("Kullanıcı adı veya şifre hatalı", "HATA", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
 
             }
+        }
+
+        private void btn_ögrenci_kayıt_ol_Click(object sender, EventArgs e)
+        {
+            frm_ögrenci_kayıt frm = new frm_ögrenci_kayıt();
+            frm.Show();
+            this.Hide();
         }
     }
 }

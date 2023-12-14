@@ -21,6 +21,8 @@ namespace YemekhaneOtomasyonu
         public string ögrenciSifre { get; set; }
         public Nullable<int> ögrenciBakiyeID { get; set; }
         public Nullable<bool> ögrenciDurum { get; set; }
+        public string ögrenciTC { get; set; }
+        public string ögrenciDoğumYıl { get; set; }
     
         public virtual ögrenciBakiye ögrenciBakiye { get; set; }
     }

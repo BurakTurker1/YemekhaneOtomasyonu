@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YemekhaneOtomasyonu.ServiceReference1;
 
 namespace YemekhaneOtomasyonu
 {
@@ -19,7 +20,58 @@ namespace YemekhaneOtomasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
+            long tcNo = Convert.ToInt64(txt_Tc_No.Text);
+            string ad = txt_ad.Text.ToUpper();
+            string soyad = txt_Soyad.Text.ToUpper();
+            int dogumYıl = Convert.ToInt16(txt_dogum_yıl.Text);
+            string ögrenciNo = txt_öğrenci_NO.Text;
+            string sifre = txt_sifre.Text;
+            KPSPublicSoapClient kps = new KPSPublicSoapClient();
+            bool ÖgrenciVar = kps.TCKimlikNoDogrula(tcNo, ad, soyad, dogumYıl);
+            if (ÖgrenciVar == true)
+            {
+                Ögrenci yeniögrenci = new Ögrenci();
+                yeniögrenci.ögrenciDurum = true;
+                yeniögrenci.ögrenciNumarası =ögrenciNo.ToString();
+                yeniögrenci.ÖgrenciAd = ad;
+                yeniögrenci.ögrenciSoyad = soyad;
+                yeniögrenci.ögrenciDoğumYıl = dogumYıl.ToString();
+                yeniögrenci.ögrenciSifre = sifre;
+                vt.Ögrenci.Add(yeniögrenci);
+                int kayıt = vt.SaveChanges();
+                if (kayıt>0)
+                {
+                    MessageBox.Show("Öğrenci Doğrulandı ve Kayıt Başarıyla Yapıldı!");
+                    
+                    frm_ögrenci_giris frm = new frm_ögrenci_giris();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Öğrenci Doğrulandı ama Kayıt Yapılamadı!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Öğrenci Doğrulanamadı ve Kayıt Yapılamadı!");
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frm_ögrenci_giris frm = new frm_ögrenci_giris();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void frm_ögrenci_kayıt_Load(object sender, EventArgs e)
+        {
 
         }
     }
 }
+
