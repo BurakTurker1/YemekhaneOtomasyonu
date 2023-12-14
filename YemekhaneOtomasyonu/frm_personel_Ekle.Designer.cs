@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_yetki = new System.Windows.Forms.ComboBox();
+            this.personelYetkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
+            this.personelYetkiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rb_Kadın = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.rb_erkek = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.btn_geri = new System.Windows.Forms.Button();
             this.txt_sifre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,26 +52,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Soyad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.rb_erkek = new System.Windows.Forms.RadioButton();
-            this.rb_Kadın = new System.Windows.Forms.RadioButton();
-            this.cmb_yetki = new System.Windows.Forms.ComboBox();
-            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
             this.yemekhaneOtomasyonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personelYetkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personelYetkiTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.PersonelYetkiTableAdapter();
             this.personelYetkiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fKPersonelPersonelYetkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personelTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.PersonelTableAdapter();
-            this.personelYetkiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKPersonelPersonelYetkiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -95,6 +95,73 @@
             this.groupBox1.Text = "Personel Ekle";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cmb_yetki
+            // 
+            this.cmb_yetki.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.personelYetkiBindingSource, "PersonelYetkiTür", true));
+            this.cmb_yetki.DataSource = this.personelYetkiBindingSource2;
+            this.cmb_yetki.DisplayMember = "PersonelYetkiTür";
+            this.cmb_yetki.FormattingEnabled = true;
+            this.cmb_yetki.Location = new System.Drawing.Point(175, 354);
+            this.cmb_yetki.Name = "cmb_yetki";
+            this.cmb_yetki.Size = new System.Drawing.Size(146, 32);
+            this.cmb_yetki.TabIndex = 34;
+            this.cmb_yetki.ValueMember = "personelYetkiID";
+            // 
+            // personelYetkiBindingSource
+            // 
+            this.personelYetkiBindingSource.DataMember = "PersonelYetki";
+            this.personelYetkiBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
+            // 
+            // yemekhane_OtomasyonDataSet
+            // 
+            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
+            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personelYetkiBindingSource2
+            // 
+            this.personelYetkiBindingSource2.DataMember = "PersonelYetki";
+            this.personelYetkiBindingSource2.DataSource = this.yemekhane_OtomasyonDataSet;
+            // 
+            // rb_Kadın
+            // 
+            this.rb_Kadın.AutoSize = true;
+            this.rb_Kadın.Location = new System.Drawing.Point(279, 403);
+            this.rb_Kadın.Name = "rb_Kadın";
+            this.rb_Kadın.Size = new System.Drawing.Size(80, 28);
+            this.rb_Kadın.TabIndex = 33;
+            this.rb_Kadın.TabStop = true;
+            this.rb_Kadın.Text = "Kadın";
+            this.rb_Kadın.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(103, 357);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 24);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Yetki:";
+            // 
+            // rb_erkek
+            // 
+            this.rb_erkek.AutoSize = true;
+            this.rb_erkek.Location = new System.Drawing.Point(171, 403);
+            this.rb_erkek.Name = "rb_erkek";
+            this.rb_erkek.Size = new System.Drawing.Size(79, 28);
+            this.rb_erkek.TabIndex = 32;
+            this.rb_erkek.TabStop = true;
+            this.rb_erkek.Text = "Erkek";
+            this.rb_erkek.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(77, 403);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 24);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Cinsiyet:";
+            // 
             // btn_geri
             // 
             this.btn_geri.Location = new System.Drawing.Point(276, 459);
@@ -103,6 +170,7 @@
             this.btn_geri.TabIndex = 27;
             this.btn_geri.Text = "Geri";
             this.btn_geri.UseVisualStyleBackColor = true;
+            this.btn_geri.Click += new System.EventHandler(this.btn_geri_Click);
             // 
             // txt_sifre
             // 
@@ -211,72 +279,10 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Ad:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 403);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 24);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Cinsiyet:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(103, 357);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 24);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Yetki:";
-            // 
-            // rb_erkek
-            // 
-            this.rb_erkek.AutoSize = true;
-            this.rb_erkek.Location = new System.Drawing.Point(171, 403);
-            this.rb_erkek.Name = "rb_erkek";
-            this.rb_erkek.Size = new System.Drawing.Size(79, 28);
-            this.rb_erkek.TabIndex = 32;
-            this.rb_erkek.TabStop = true;
-            this.rb_erkek.Text = "Erkek";
-            this.rb_erkek.UseVisualStyleBackColor = true;
-            // 
-            // rb_Kadın
-            // 
-            this.rb_Kadın.AutoSize = true;
-            this.rb_Kadın.Location = new System.Drawing.Point(279, 403);
-            this.rb_Kadın.Name = "rb_Kadın";
-            this.rb_Kadın.Size = new System.Drawing.Size(80, 28);
-            this.rb_Kadın.TabIndex = 33;
-            this.rb_Kadın.TabStop = true;
-            this.rb_Kadın.Text = "Kadın";
-            this.rb_Kadın.UseVisualStyleBackColor = true;
-            // 
-            // cmb_yetki
-            // 
-            this.cmb_yetki.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.personelYetkiBindingSource, "PersonelYetkiTür", true));
-            this.cmb_yetki.DataSource = this.personelYetkiBindingSource2;
-            this.cmb_yetki.DisplayMember = "PersonelYetkiTür";
-            this.cmb_yetki.FormattingEnabled = true;
-            this.cmb_yetki.Location = new System.Drawing.Point(175, 354);
-            this.cmb_yetki.Name = "cmb_yetki";
-            this.cmb_yetki.Size = new System.Drawing.Size(146, 32);
-            this.cmb_yetki.TabIndex = 34;
-            this.cmb_yetki.ValueMember = "personelYetkiID";
-            // 
-            // yemekhane_OtomasyonDataSet
-            // 
-            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
-            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // yemekhaneOtomasyonDataSetBindingSource
             // 
             this.yemekhaneOtomasyonDataSetBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
             this.yemekhaneOtomasyonDataSetBindingSource.Position = 0;
-            // 
-            // personelYetkiBindingSource
-            // 
-            this.personelYetkiBindingSource.DataMember = "PersonelYetki";
-            this.personelYetkiBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
             // 
             // personelYetkiTableAdapter
             // 
@@ -296,31 +302,26 @@
             // 
             this.personelTableAdapter.ClearBeforeFill = true;
             // 
-            // personelYetkiBindingSource2
-            // 
-            this.personelYetkiBindingSource2.DataMember = "PersonelYetki";
-            this.personelYetkiBindingSource2.DataSource = this.yemekhane_OtomasyonDataSet;
-            // 
             // frm_personel_Ekle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(114)))), ((int)(((byte)(57)))));
-            this.ClientSize = new System.Drawing.Size(1113, 658);
+            this.ClientSize = new System.Drawing.Size(1113, 483);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frm_personel_Ekle";
             this.Text = "frm_personel_Ekle";
             this.Load += new System.EventHandler(this.frm_personel_Ekle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKPersonelPersonelYetkiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personelYetkiBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }

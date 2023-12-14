@@ -18,3 +18,4 @@ D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\o
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_personel_Giris.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_personel_menu.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_personel_Ekle.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_sıfre_degıs.resources

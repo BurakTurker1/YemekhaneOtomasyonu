@@ -107,5 +107,17 @@ namespace YemekhaneOtomasyonu
             frm_Sıfre_Degıs.Show();
             this.Hide();
         }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_personel_Ekle frm_Personel_Ekle = new frm_personel_Ekle();
+            frm_Personel_Ekle.Show();
+            this.Hide();
+        }
+
+        private void frm_personel_menu_Load(object sender, EventArgs e)
+        {
+
+        }
     } 
 }

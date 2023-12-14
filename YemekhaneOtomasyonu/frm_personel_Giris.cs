@@ -46,5 +46,10 @@ namespace YemekhaneOtomasyonu
             }
 
         }
+
+        private void frm_personel_Giris_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

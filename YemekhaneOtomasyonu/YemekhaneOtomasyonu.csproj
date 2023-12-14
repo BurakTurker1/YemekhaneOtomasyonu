@@ -161,6 +161,9 @@
     <EmbeddedResource Include="frm_personel_menu.resx">
       <DependentUpon>frm_personel_menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_sıfre_degıs.resx">
+      <DependentUpon>frm_sıfre_degıs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_ögrenci_giris.resx">
       <DependentUpon>frm_ögrenci_giris.cs</DependentUpon>
     </EmbeddedResource>

@@ -76,5 +76,13 @@ namespace YemekhaneOtomasyonu
             this.personelYetkiTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.PersonelYetki);
 
         }
+
+        private void btn_geri_Click(object sender, EventArgs e)
+        {
+
+            frm_personel_menu frm = new frm_personel_menu();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
