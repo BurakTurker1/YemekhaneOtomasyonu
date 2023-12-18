@@ -210,6 +210,9 @@
     <EmbeddedResource Include="frm_yemek_Ekle.resx">
       <DependentUpon>frm_yemek_Ekle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_yemek_stok_belirle.resx">
+      <DependentUpon>frm_yemek_stok_belirle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_ögrenci_bakiye_yükle.resx">
       <DependentUpon>frm_ögrenci_bakiye_yükle.cs</DependentUpon>
     </EmbeddedResource>
