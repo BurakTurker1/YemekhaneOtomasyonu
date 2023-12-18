@@ -116,6 +116,12 @@
     <Compile Include="frm_yemek_Ekle.Designer.cs">
       <DependentUpon>frm_yemek_Ekle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_yemek_fiyat_belirle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_yemek_fiyat_belirle.Designer.cs">
+      <DependentUpon>frm_yemek_fiyat_belirle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_yemek_stok_belirle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_yemek_Ekle.resx">
       <DependentUpon>frm_yemek_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_yemek_fiyat_belirle.resx">
+      <DependentUpon>frm_yemek_fiyat_belirle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_yemek_stok_belirle.resx">
       <DependentUpon>frm_yemek_stok_belirle.cs</DependentUpon>

@@ -24,3 +24,4 @@ D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\o
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_ögrenci_menu.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_yemek_Ekle.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_yemek_stok_belirle.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_yemek_fiyat_belirle.resources

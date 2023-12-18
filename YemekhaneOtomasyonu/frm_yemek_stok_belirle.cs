@@ -28,7 +28,7 @@ namespace YemekhaneOtomasyonu
         {
             int seciliYemek =Convert.ToInt16(cmb_yemek_ad.SelectedValue);
             int YemekStok = Convert.ToInt16(txt_stok.Text);
-            MessageBox.Show("Seçili yemek" + seciliYemek);
+           // MessageBox.Show("Seçili yemek" + seciliYemek);
 
             Yemek gelenYemek = vt.Yemek.FirstOrDefault(p => p.YemekID == seciliYemek);
             if(gelenYemek != null)
