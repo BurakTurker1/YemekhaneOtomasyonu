@@ -69,8 +69,8 @@
           </Key>
           <Property Name="YemekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Yemekisim" Type="varchar" MaxLength="50" />
-          <Property Name="YemekKalori" Type="smallint" />
-          <Property Name="Yemekfiyat" Type="smallint" />
+          <Property Name="YemekKalori" Type="int" />
+          <Property Name="Yemekfiyat" Type="int" />
           <Property Name="yemekMiktar" Type="int" />
         </EntityType>
         <Association Name="FK_HaftalıkYemek_Yemek">

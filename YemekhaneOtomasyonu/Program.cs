@@ -16,7 +16,7 @@ namespace YemekhaneOtomasyonu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_ögrenci_bakiye_yükle());
+            Application.Run(new frm_yemek_Ekle());
         }
     }
 }

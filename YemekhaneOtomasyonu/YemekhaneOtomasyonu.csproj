@@ -86,6 +86,12 @@
     <Compile Include="frm_personel_Giris.Designer.cs">
       <DependentUpon>frm_personel_Giris.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_personel_Listele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_Listele.Designer.cs">
+      <DependentUpon>frm_personel_Listele.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_personel_menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,18 @@
     </Compile>
     <Compile Include="frm_yemek_al.Designer.cs">
       <DependentUpon>frm_yemek_al.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_yemek_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_yemek_Ekle.Designer.cs">
+      <DependentUpon>frm_yemek_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_yemek_stok_belirle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_yemek_stok_belirle.Designer.cs">
+      <DependentUpon>frm_yemek_stok_belirle.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ögrenci_bakiye_yükle.cs">
       <SubType>Form</SubType>
@@ -188,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Personel_sıfre_degıs.resx">
       <DependentUpon>frm_Personel_sıfre_degıs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_yemek_Ekle.resx">
+      <DependentUpon>frm_yemek_Ekle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ögrenci_bakiye_yükle.resx">
       <DependentUpon>frm_ögrenci_bakiye_yükle.cs</DependentUpon>
