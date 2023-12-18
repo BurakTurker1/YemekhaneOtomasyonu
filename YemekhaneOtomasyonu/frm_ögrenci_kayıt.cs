@@ -40,7 +40,17 @@ namespace YemekhaneOtomasyonu
                 yeniögrenci.ögrenciSoyad = soyad;
                 yeniögrenci.ögrenciDoğumYıl = dogumYıl.ToString();
                 yeniögrenci.ögrenciSifre = sifre;
-                vt.Ögrenci.Add(yeniögrenci);
+
+                // Yeni öğrenciye varsayılan bakiye ekleniyor
+                ögrenciBakiye yeniBakiye = new ögrenciBakiye();
+                yeniBakiye.ögrenciBakiye1 = 0; // Varsayılan bakiye sıfır
+                yeniBakiye.ögrenciBakiyeYüklemeTarih = DateTime.Now;
+
+                // Yeni bakiye öğrenciye bağlanıyor
+                yeniBakiye.Ögrenci.Add(yeniögrenci);
+                vt.ögrenciBakiye.Add(yeniBakiye);
+
+
                 int kayıt = vt.SaveChanges();
                 if (kayıt>0)
                 {

@@ -21,7 +21,7 @@ namespace YemekhaneOtomasyonu
         }
     
         public int ögrenciBakiyeID { get; set; }
-        public Nullable<short> ögrenciBakiye1 { get; set; }
+        public Nullable<int> ögrenciBakiye1 { get; set; }
         public Nullable<System.DateTime> ögrenciBakiyeYüklemeTarih { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

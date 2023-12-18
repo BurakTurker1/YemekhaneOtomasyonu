@@ -34,7 +34,7 @@
       <PropertyRef Name="ögrenciBakiyeID" />
     </Key>
     <Property Name="ögrenciBakiyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ögrenciBakiye" Type="smallint" />
+    <Property Name="ögrenciBakiye" Type="int" />
     <Property Name="ögrenciBakiyeYüklemeTarih" Type="smalldatetime" />
   </EntityType>
   <EntityType Name="Personel">

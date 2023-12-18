@@ -36,7 +36,7 @@
       <PropertyRef Name="ögrenciBakiyeID" />
     </Key>
     <Property Name="ögrenciBakiyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ögrenciBakiye1" Type="Int16" />
+    <Property Name="ögrenciBakiye1" Type="Int32" />
     <Property Name="ögrenciBakiyeYüklemeTarih" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Ögrenci" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="ögrenciBakiye" ToRole="Ögrenci" />
   </EntityType>
