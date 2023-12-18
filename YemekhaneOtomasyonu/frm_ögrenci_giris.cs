@@ -12,6 +12,7 @@ namespace YemekhaneOtomasyonu
 {
     public partial class frm_ögrenci_giris : Form
     {
+        public Ögrenci girisYapanÖgrenci;
         public frm_ögrenci_giris()
         {
             InitializeComponent();
@@ -36,11 +37,16 @@ namespace YemekhaneOtomasyonu
 
             Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
 
-            Ögrenci ögrenci = vt.Ögrenci.FirstOrDefault(p => p.ögrenciNumarası == ögrenciNo && p.ögrenciSifre == ögrenciSifre);
-            if (ögrenci != null)
+            girisYapanÖgrenci = vt.Ögrenci.FirstOrDefault(p => p.ögrenciNumarası == ögrenciNo && p.ögrenciSifre == ögrenciSifre);
+            if (girisYapanÖgrenci != null)
             {
                MessageBox.Show("Giriş Başarılı");
-                frm_yemek_al frm = new frm_yemek_al();
+
+                //giris yapan ögrenciyi gönderme
+                frm_ögrenci_bakiye_yükle frm_Ögrenci_Bakiye_Yükle = new frm_ögrenci_bakiye_yükle();
+
+
+                frm_ögrenci_menu frm = new frm_ögrenci_menu(girisYapanÖgrenci);
                 frm.Show();
                 this.Hide();
                 

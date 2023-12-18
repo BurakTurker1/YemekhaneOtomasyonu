@@ -49,6 +49,13 @@ namespace YemekhaneOtomasyonu
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_ögrenci_menu frm = new frm_ögrenci_menu();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
 

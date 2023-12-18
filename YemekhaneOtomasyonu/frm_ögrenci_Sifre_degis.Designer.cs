@@ -36,11 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_ögrenci_no = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btn_ögrenci_sifre_degis);
             this.groupBox1.Controls.Add(this.txt_yeni_sifre);
             this.groupBox1.Controls.Add(this.label3);
@@ -113,6 +115,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "öğrenci No:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(305, 327);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 31);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Geri";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_ögrenci_Sifre_degis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -121,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(1100, 675);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frm_ögrenci_Sifre_degis";
             this.Text = "frm_ögrenci_Sifre_degis";
             this.groupBox1.ResumeLayout(false);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_ögrenci_no;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -14,7 +14,8 @@ namespace YemekhaneOtomasyonu
     {
         public Personel Personel;
         frm_personel_Giris frm_Personel_Giris = new frm_personel_Giris();
-        frm_Personel_sıfre_degıs frm_Sıfre_Degıs = new frm_Personel_sıfre_degıs();
+        frm_Personel_sıfre_degıs frm_Personel_Sıfre_Degıs = new frm_Personel_sıfre_degıs();
+        frm_ögrenci_Sifre_degis frm_Ögrenci_Sifre_Degis = new frm_ögrenci_Sifre_degis();
 
 
         public frm_personel_menu()
@@ -86,25 +87,25 @@ namespace YemekhaneOtomasyonu
 
         private void şifreDeğiştirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_Sıfre_Degıs.Show();
+            frm_Personel_Sıfre_Degıs.Show();
             this.Hide();
         }
 
         private void şifreDeğiştirToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frm_Sıfre_Degıs.Show();
+            frm_Personel_Sıfre_Degıs.Show();
             this.Hide();
         }
 
         private void şifreDeğiştirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_Sıfre_Degıs.Show();
+            frm_Personel_Sıfre_Degıs.Show();
             this.Hide();
         }
 
         private void şifreDeğişirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_Sıfre_Degıs.Show();
+            frm_Personel_Sıfre_Degıs.Show();
             this.Hide();
         }
 
