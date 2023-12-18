@@ -14,7 +14,7 @@ namespace YemekhaneOtomasyonu
     {
         public Personel Personel;
         frm_personel_Giris frm_Personel_Giris = new frm_personel_Giris();
-        frm_sıfre_degıs frm_Sıfre_Degıs = new frm_sıfre_degıs();
+        frm_Personel_sıfre_degıs frm_Sıfre_Degıs = new frm_Personel_sıfre_degıs();
 
 
         public frm_personel_menu()

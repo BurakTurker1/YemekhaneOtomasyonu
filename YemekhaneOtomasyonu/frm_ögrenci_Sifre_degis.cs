@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace YemekhaneOtomasyonu
 {
-    public partial class frm_sıfre_degıs : Form
+    public partial class frm_ögrenci_Sifre_degis : Form
     {
-        public frm_sıfre_degıs()
+        public frm_ögrenci_Sifre_degis()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_ögrenci_sifre_degis_Click(object sender, EventArgs e)
         {
-            string Eposta = txt_Tc.Text;
+            string ögrenciNo = txt_ögrenci_no.Text;
             string eskiSifre = txt_eski_sifre.Text;
             string yeniSifre = txt_yeni_sifre.Text;
 
@@ -28,12 +28,12 @@ namespace YemekhaneOtomasyonu
                 try
                 {
                     // Veritabanında e-posta ve eski şifre ile personeli bul
-                    Personel personel = vt.Personel.FirstOrDefault(p => p.PersonelGmail == Eposta && p.PersonelSifre == eskiSifre);
+                    Ögrenci ögrenci = vt.Ögrenci.FirstOrDefault(p => p.ögrenciNumarası == ögrenciNo && p.ögrenciSifre == eskiSifre);
 
-                    if (personel != null)
+                    if (ögrenci != null)
                     {
                         // Personel bulundu, şifreyi güncelle
-                        personel.PersonelSifre = yeniSifre;
+                        ögrenci.ögrenciSifre = yeniSifre;
                         vt.SaveChanges();
 
                         MessageBox.Show("Şifre başarıyla değiştirildi");
@@ -49,6 +49,6 @@ namespace YemekhaneOtomasyonu
                 }
             }
         }
-
     }
 }
+
