@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_ögrenci_No = new System.Windows.Forms.TextBox();
+            this.txt_tc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_bakiye = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,9 +41,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_ögrenci_No);
+            this.groupBox1.Controls.Add(this.txt_tc);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txt_bakiye);
             this.groupBox1.Controls.Add(this.label2);
@@ -57,35 +55,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bakiye Yükle";
             // 
-            // txt_ögrenci_No
+            // txt_tc
             // 
-            this.txt_ögrenci_No.Location = new System.Drawing.Point(148, 118);
-            this.txt_ögrenci_No.Name = "txt_ögrenci_No";
-            this.txt_ögrenci_No.Size = new System.Drawing.Size(100, 32);
-            this.txt_ögrenci_No.TabIndex = 7;
+            this.txt_tc.Location = new System.Drawing.Point(148, 118);
+            this.txt_tc.Name = "txt_tc";
+            this.txt_tc.Size = new System.Drawing.Size(100, 32);
+            this.txt_tc.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 121);
+            this.label3.Location = new System.Drawing.Point(108, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 24);
+            this.label3.Size = new System.Drawing.Size(34, 24);
             this.label3.TabIndex = 6;
-            this.label3.Text = "ÖgrenciNo:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(253, 240);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Geri";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label3.Text = "Tc:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(104, 241);
+            this.button1.Location = new System.Drawing.Point(125, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 32);
             this.button1.TabIndex = 4;
@@ -103,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 181);
+            this.label2.Location = new System.Drawing.Point(83, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 24);
             this.label2.TabIndex = 2;
@@ -152,10 +140,9 @@
         private System.Windows.Forms.Label lbl_bakiye;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_bakiye;
-        private System.Windows.Forms.TextBox txt_ögrenci_No;
+        private System.Windows.Forms.TextBox txt_tc;
         private System.Windows.Forms.Label label3;
     }
 }

@@ -22,8 +22,8 @@ namespace YemekhaneOtomasyonu
     
         public int YemekID { get; set; }
         public string Yemekisim { get; set; }
-        public Nullable<short> YemekKalori { get; set; }
-        public Nullable<short> Yemekfiyat { get; set; }
+        public Nullable<int> YemekKalori { get; set; }
+        public Nullable<int> Yemekfiyat { get; set; }
         public Nullable<int> yemekMiktar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

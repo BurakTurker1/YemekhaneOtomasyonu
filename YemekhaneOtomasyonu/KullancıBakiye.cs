@@ -12,19 +12,19 @@ namespace YemekhaneOtomasyonu
     using System;
     using System.Collections.Generic;
     
-    public partial class ögrenciBakiye
+    public partial class KullancıBakiye
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ögrenciBakiye()
+        public KullancıBakiye()
         {
-            this.Ögrenci = new HashSet<Ögrenci>();
+            this.Kullanıcı = new HashSet<Kullanıcı>();
         }
     
-        public int ögrenciBakiyeID { get; set; }
-        public Nullable<int> ögrenciBakiye1 { get; set; }
-        public Nullable<System.DateTime> ögrenciBakiyeYüklemeTarih { get; set; }
+        public int KullancıBakiyeID { get; set; }
+        public Nullable<int> kBakiye { get; set; }
+        public Nullable<System.DateTime> kBakiyeYüklemeTarih { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ögrenci> Ögrenci { get; set; }
+        public virtual ICollection<Kullanıcı> Kullanıcı { get; set; }
     }
 }

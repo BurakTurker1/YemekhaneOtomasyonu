@@ -30,8 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_giris = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mtxt_Tc = new System.Windows.Forms.MaskedTextBox();
+            this.txt_sifre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,27 +57,51 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Yemekhane Otomasyonu";
             // 
-            // button1
+            // label2
             // 
-            this.button1.BackColor = System.Drawing.Color.Wheat;
-            this.button1.Location = new System.Drawing.Point(171, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 166);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Personel";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(383, 267);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 24);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Şifre:";
             // 
-            // button2
+            // btn_giris
             // 
-            this.button2.BackColor = System.Drawing.Color.Wheat;
-            this.button2.Location = new System.Drawing.Point(581, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 166);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Öğrenci";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_giris.Location = new System.Drawing.Point(460, 318);
+            this.btn_giris.Name = "btn_giris";
+            this.btn_giris.Size = new System.Drawing.Size(97, 38);
+            this.btn_giris.TabIndex = 13;
+            this.btn_giris.Text = "Giriş Yap";
+            this.btn_giris.UseVisualStyleBackColor = true;
+            this.btn_giris.Click += new System.EventHandler(this.btn_giris_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Location = new System.Drawing.Point(399, 213);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 24);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "TC:";
+            // 
+            // mtxt_Tc
+            // 
+            this.mtxt_Tc.Location = new System.Drawing.Point(460, 205);
+            this.mtxt_Tc.Mask = "00000000000";
+            this.mtxt_Tc.Name = "mtxt_Tc";
+            this.mtxt_Tc.Size = new System.Drawing.Size(128, 32);
+            this.mtxt_Tc.TabIndex = 16;
+            this.mtxt_Tc.ValidatingType = typeof(int);
+            // 
+            // txt_sifre
+            // 
+            this.txt_sifre.Location = new System.Drawing.Point(460, 264);
+            this.txt_sifre.Name = "txt_sifre";
+            this.txt_sifre.Size = new System.Drawing.Size(128, 32);
+            this.txt_sifre.TabIndex = 15;
+            this.txt_sifre.UseSystemPasswordChar = true;
             // 
             // frm_giriş
             // 
@@ -82,16 +109,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(114)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(1100, 479);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.mtxt_Tc);
+            this.Controls.Add(this.txt_sifre);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_giris);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_giriş";
-            this.Text = "Form1";
+            this.Text = "Giriş Ekranı";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,8 +130,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_giris;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox mtxt_Tc;
+        private System.Windows.Forms.TextBox txt_sifre;
     }
 }
 

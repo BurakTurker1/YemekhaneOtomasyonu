@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="HaftalıkYemek">
           <Key>
             <PropertyRef Name="haftalıkYemekID" />
@@ -20,48 +20,34 @@
           <Property Name="hGün6" Type="varchar(max)" />
           <Property Name="hGün7" Type="varchar(max)" />
         </EntityType>
-        <EntityType Name="Ögrenci">
+        <EntityType Name="KullancıBakiye">
           <Key>
-            <PropertyRef Name="ögrenciID" />
+            <PropertyRef Name="KullancıBakiyeID" />
           </Key>
-          <Property Name="ögrenciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ÖgrenciAd" Type="varchar" MaxLength="20" />
-          <Property Name="ögrenciSoyad" Type="varchar" MaxLength="30" />
-          <Property Name="ögrenciNumarası" Type="varchar" MaxLength="10" />
-          <Property Name="ögrenciSifre" Type="varchar" MaxLength="16" />
-          <Property Name="ögrenciBakiyeID" Type="int" />
-          <Property Name="ögrenciDurum" Type="bit" />
-          <Property Name="ögrenciTC" Type="varchar" MaxLength="11" />
-          <Property Name="ögrenciDoğumYıl" Type="varchar" MaxLength="4" />
+          <Property Name="KullancıBakiyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kBakiye" Type="int" />
+          <Property Name="kBakiyeYüklemeTarih" Type="smalldatetime" />
         </EntityType>
-        <EntityType Name="ögrenciBakiye">
+        <EntityType Name="Kullanıcı">
           <Key>
-            <PropertyRef Name="ögrenciBakiyeID" />
+            <PropertyRef Name="KullanıcıID" />
           </Key>
-          <Property Name="ögrenciBakiyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ögrenciBakiye" Type="int" />
-          <Property Name="ögrenciBakiyeYüklemeTarih" Type="smalldatetime" />
+          <Property Name="KullanıcıID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kAd" Type="varchar" MaxLength="50" />
+          <Property Name="kSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="kTc" Type="varchar" MaxLength="11" />
+          <Property Name="kDogumYıl" Type="varchar" MaxLength="10" />
+          <Property Name="kDurum" Type="bit" />
+          <Property Name="kYetkiID" Type="int" />
+          <Property Name="KullanıcıBakiye" Type="int" />
+          <Property Name="kSifre" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Personel">
+        <EntityType Name="KullanıcıYetki">
           <Key>
-            <PropertyRef Name="PersonleID" />
+            <PropertyRef Name="KullancıYetkiID" />
           </Key>
-          <Property Name="PersonleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="personelAD" Type="varchar" MaxLength="15" />
-          <Property Name="PersonleSoyad" Type="varchar" MaxLength="15" />
-          <Property Name="PersonelGmail" Type="varchar(max)" />
-          <Property Name="PersonelSifre" Type="varchar" MaxLength="16" />
-          <Property Name="PersonelYetkiID" Type="int" />
-          <Property Name="PersonelCinsiyet" Type="varchar" MaxLength="5" />
-          <Property Name="personelDogumYıl" Type="int" />
-          <Property Name="PersonelTCNo" Type="varchar" MaxLength="11" />
-        </EntityType>
-        <EntityType Name="PersonelYetki">
-          <Key>
-            <PropertyRef Name="personelYetkiID" />
-          </Key>
-          <Property Name="personelYetkiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PersonelYetkiTür" Type="varchar" MaxLength="20" />
+          <Property Name="KullancıYetkiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullancıYetkiTür" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Yemek">
           <Key>
@@ -85,51 +71,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ögrenci_ögrenciBakiye">
-          <End Role="ögrenciBakiye" Type="Self.ögrenciBakiye" Multiplicity="0..1" />
-          <End Role="Ögrenci" Type="Self.Ögrenci" Multiplicity="*" />
+        <Association Name="FK_Kullanıcı_KullanıcıYetki">
+          <End Role="KullanıcıYetki" Type="Self.KullanıcıYetki" Multiplicity="0..1" />
+          <End Role="Kullanıcı" Type="Self.Kullanıcı" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ögrenciBakiye">
-              <PropertyRef Name="ögrenciBakiyeID" />
+            <Principal Role="KullanıcıYetki">
+              <PropertyRef Name="KullancıYetkiID" />
             </Principal>
-            <Dependent Role="Ögrenci">
-              <PropertyRef Name="ögrenciBakiyeID" />
+            <Dependent Role="Kullanıcı">
+              <PropertyRef Name="kYetkiID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Personel_PersonelYetki">
-          <End Role="PersonelYetki" Type="Self.PersonelYetki" Multiplicity="0..1" />
-          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+        <Association Name="FK_Kullanıcı_ögrenciBakiye">
+          <End Role="KullancıBakiye" Type="Self.KullancıBakiye" Multiplicity="0..1" />
+          <End Role="Kullanıcı" Type="Self.Kullanıcı" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PersonelYetki">
-              <PropertyRef Name="personelYetkiID" />
+            <Principal Role="KullancıBakiye">
+              <PropertyRef Name="KullancıBakiyeID" />
             </Principal>
-            <Dependent Role="Personel">
-              <PropertyRef Name="PersonelYetkiID" />
+            <Dependent Role="Kullanıcı">
+              <PropertyRef Name="KullanıcıBakiye" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="HaftalıkYemek" EntityType="Self.HaftalıkYemek" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ögrenci" EntityType="Self.Ögrenci" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ögrenciBakiye" EntityType="Self.ögrenciBakiye" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PersonelYetki" EntityType="Self.PersonelYetki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KullancıBakiye" EntityType="Self.KullancıBakiye" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanıcı" EntityType="Self.Kullanıcı" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KullanıcıYetki" EntityType="Self.KullanıcıYetki" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yemek" EntityType="Self.Yemek" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_HaftalıkYemek_Yemek" Association="Self.FK_HaftalıkYemek_Yemek">
             <End Role="Yemek" EntitySet="Yemek" />
             <End Role="HaftalıkYemek" EntitySet="HaftalıkYemek" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ögrenci_ögrenciBakiye" Association="Self.FK_Ögrenci_ögrenciBakiye">
-            <End Role="ögrenciBakiye" EntitySet="ögrenciBakiye" />
-            <End Role="Ögrenci" EntitySet="Ögrenci" />
+          <AssociationSet Name="FK_Kullanıcı_KullanıcıYetki" Association="Self.FK_Kullanıcı_KullanıcıYetki">
+            <End Role="KullanıcıYetki" EntitySet="KullanıcıYetki" />
+            <End Role="Kullanıcı" EntitySet="Kullanıcı" />
           </AssociationSet>
-          <AssociationSet Name="FK_Personel_PersonelYetki" Association="Self.FK_Personel_PersonelYetki">
-            <End Role="PersonelYetki" EntitySet="PersonelYetki" />
-            <End Role="Personel" EntitySet="Personel" />
+          <AssociationSet Name="FK_Kullanıcı_ögrenciBakiye" Association="Self.FK_Kullanıcı_ögrenciBakiye">
+            <End Role="KullancıBakiye" EntitySet="KullancıBakiye" />
+            <End Role="Kullanıcı" EntitySet="Kullanıcı" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -149,52 +135,38 @@
           <Property Name="hGün7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Yemek" Relationship="Self.FK_HaftalıkYemek_Yemek" FromRole="HaftalıkYemek" ToRole="Yemek" />
         </EntityType>
-        <EntityType Name="Ögrenci">
+        <EntityType Name="KullancıBakiye">
           <Key>
-            <PropertyRef Name="ögrenciID" />
+            <PropertyRef Name="KullancıBakiyeID" />
           </Key>
-          <Property Name="ögrenciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ÖgrenciAd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ögrenciSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ögrenciNumarası" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ögrenciSifre" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="ögrenciBakiyeID" Type="Int32" />
-          <Property Name="ögrenciDurum" Type="Boolean" />
-          <NavigationProperty Name="ögrenciBakiye" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="Ögrenci" ToRole="ögrenciBakiye" />
-          <Property Name="ögrenciTC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="ögrenciDoğumYıl" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="KullancıBakiyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kBakiye" Type="Int32" />
+          <Property Name="kBakiyeYüklemeTarih" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Kullanıcı" Relationship="Self.FK_Kullanıcı_ögrenciBakiye" FromRole="KullancıBakiye" ToRole="Kullanıcı" />
         </EntityType>
-        <EntityType Name="ögrenciBakiye">
+        <EntityType Name="Kullanıcı">
           <Key>
-            <PropertyRef Name="ögrenciBakiyeID" />
+            <PropertyRef Name="KullanıcıID" />
           </Key>
-          <Property Name="ögrenciBakiyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ögrenciBakiye1" Type="Int32" />
-          <Property Name="ögrenciBakiyeYüklemeTarih" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Ögrenci" Relationship="Self.FK_Ögrenci_ögrenciBakiye" FromRole="ögrenciBakiye" ToRole="Ögrenci" />
+          <Property Name="KullanıcıID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kTc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="kDogumYıl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="kDurum" Type="Boolean" />
+          <Property Name="kYetkiID" Type="Int32" />
+          <Property Name="KullanıcıBakiye" Type="Int32" />
+          <Property Name="kSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KullancıBakiye" Relationship="Self.FK_Kullanıcı_ögrenciBakiye" FromRole="Kullanıcı" ToRole="KullancıBakiye" />
+          <NavigationProperty Name="KullanıcıYetki" Relationship="Self.FK_Kullanıcı_KullanıcıYetki" FromRole="Kullanıcı" ToRole="KullanıcıYetki" />
         </EntityType>
-        <EntityType Name="Personel">
+        <EntityType Name="KullanıcıYetki">
           <Key>
-            <PropertyRef Name="PersonleID" />
+            <PropertyRef Name="KullancıYetkiID" />
           </Key>
-          <Property Name="PersonleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="personelAD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="PersonleSoyad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelGmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelSifre" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="PersonelYetkiID" Type="Int32" />
-          <NavigationProperty Name="PersonelYetki" Relationship="Self.FK_Personel_PersonelYetki" FromRole="Personel" ToRole="PersonelYetki" />
-          <Property Name="PersonelCinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="personelDogumYıl" Type="Int32" />
-          <Property Name="PersonelTCNo" Type="String" Unicode="false" MaxLength="11" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="PersonelYetki">
-          <Key>
-            <PropertyRef Name="personelYetkiID" />
-          </Key>
-          <Property Name="personelYetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PersonelYetkiTür" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_PersonelYetki" FromRole="PersonelYetki" ToRole="Personel" />
+          <Property Name="KullancıYetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullancıYetkiTür" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kullanıcı" Relationship="Self.FK_Kullanıcı_KullanıcıYetki" FromRole="KullanıcıYetki" ToRole="Kullanıcı" />
         </EntityType>
         <EntityType Name="Yemek">
           <Key>
@@ -202,8 +174,8 @@
           </Key>
           <Property Name="YemekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Yemekisim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="YemekKalori" Type="Int16" />
-          <Property Name="Yemekfiyat" Type="Int16" />
+          <Property Name="YemekKalori" Type="Int32" />
+          <Property Name="Yemekfiyat" Type="Int32" />
           <Property Name="yemekMiktar" Type="Int32" />
           <NavigationProperty Name="HaftalıkYemek" Relationship="Self.FK_HaftalıkYemek_Yemek" FromRole="Yemek" ToRole="HaftalıkYemek" />
         </EntityType>
@@ -219,48 +191,47 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ögrenci_ögrenciBakiye">
-          <End Role="ögrenciBakiye" Type="Self.ögrenciBakiye" Multiplicity="0..1" />
-          <End Role="Ögrenci" Type="Self.Ögrenci" Multiplicity="*" />
+        <Association Name="FK_Kullanıcı_ögrenciBakiye">
+          <End Role="KullancıBakiye" Type="Self.KullancıBakiye" Multiplicity="0..1" />
+          <End Role="Kullanıcı" Type="Self.Kullanıcı" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ögrenciBakiye">
-              <PropertyRef Name="ögrenciBakiyeID" />
+            <Principal Role="KullancıBakiye">
+              <PropertyRef Name="KullancıBakiyeID" />
             </Principal>
-            <Dependent Role="Ögrenci">
-              <PropertyRef Name="ögrenciBakiyeID" />
+            <Dependent Role="Kullanıcı">
+              <PropertyRef Name="KullanıcıBakiye" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Personel_PersonelYetki">
-          <End Role="PersonelYetki" Type="Self.PersonelYetki" Multiplicity="0..1" />
-          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+        <Association Name="FK_Kullanıcı_KullanıcıYetki">
+          <End Role="KullanıcıYetki" Type="Self.KullanıcıYetki" Multiplicity="0..1" />
+          <End Role="Kullanıcı" Type="Self.Kullanıcı" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PersonelYetki">
-              <PropertyRef Name="personelYetkiID" />
+            <Principal Role="KullanıcıYetki">
+              <PropertyRef Name="KullancıYetkiID" />
             </Principal>
-            <Dependent Role="Personel">
-              <PropertyRef Name="PersonelYetkiID" />
+            <Dependent Role="Kullanıcı">
+              <PropertyRef Name="kYetkiID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Yemekhane_OtomasyonEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="HaftalıkYemek" EntityType="Self.HaftalıkYemek" />
-          <EntitySet Name="Ögrenci" EntityType="Self.Ögrenci" />
-          <EntitySet Name="ögrenciBakiye" EntityType="Self.ögrenciBakiye" />
-          <EntitySet Name="Personel" EntityType="Self.Personel" />
-          <EntitySet Name="PersonelYetki" EntityType="Self.PersonelYetki" />
+          <EntitySet Name="KullancıBakiye" EntityType="Self.KullancıBakiye" />
+          <EntitySet Name="Kullanıcı" EntityType="Self.Kullanıcı" />
+          <EntitySet Name="KullanıcıYetki" EntityType="Self.KullanıcıYetki" />
           <EntitySet Name="Yemek" EntityType="Self.Yemek" />
           <AssociationSet Name="FK_HaftalıkYemek_Yemek" Association="Self.FK_HaftalıkYemek_Yemek">
             <End Role="Yemek" EntitySet="Yemek" />
             <End Role="HaftalıkYemek" EntitySet="HaftalıkYemek" />
           </AssociationSet>
-          <AssociationSet Name="FK_Ögrenci_ögrenciBakiye" Association="Self.FK_Ögrenci_ögrenciBakiye">
-            <End Role="ögrenciBakiye" EntitySet="ögrenciBakiye" />
-            <End Role="Ögrenci" EntitySet="Ögrenci" />
+          <AssociationSet Name="FK_Kullanıcı_ögrenciBakiye" Association="Self.FK_Kullanıcı_ögrenciBakiye">
+            <End Role="KullancıBakiye" EntitySet="KullancıBakiye" />
+            <End Role="Kullanıcı" EntitySet="Kullanıcı" />
           </AssociationSet>
-          <AssociationSet Name="FK_Personel_PersonelYetki" Association="Self.FK_Personel_PersonelYetki">
-            <End Role="PersonelYetki" EntitySet="PersonelYetki" />
-            <End Role="Personel" EntitySet="Personel" />
+          <AssociationSet Name="FK_Kullanıcı_KullanıcıYetki" Association="Self.FK_Kullanıcı_KullanıcıYetki">
+            <End Role="KullanıcıYetki" EntitySet="KullanıcıYetki" />
+            <End Role="Kullanıcı" EntitySet="Kullanıcı" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -285,50 +256,35 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ögrenci">
-            <EntityTypeMapping TypeName="Model.Ögrenci">
-              <MappingFragment StoreEntitySet="Ögrenci">
-                <ScalarProperty Name="ögrenciDoğumYıl" ColumnName="ögrenciDoğumYıl" />
-                <ScalarProperty Name="ögrenciTC" ColumnName="ögrenciTC" />
-                <ScalarProperty Name="ögrenciID" ColumnName="ögrenciID" />
-                <ScalarProperty Name="ÖgrenciAd" ColumnName="ÖgrenciAd" />
-                <ScalarProperty Name="ögrenciSoyad" ColumnName="ögrenciSoyad" />
-                <ScalarProperty Name="ögrenciNumarası" ColumnName="ögrenciNumarası" />
-                <ScalarProperty Name="ögrenciSifre" ColumnName="ögrenciSifre" />
-                <ScalarProperty Name="ögrenciBakiyeID" ColumnName="ögrenciBakiyeID" />
-                <ScalarProperty Name="ögrenciDurum" ColumnName="ögrenciDurum" />
+          <EntitySetMapping Name="KullancıBakiye">
+            <EntityTypeMapping TypeName="Model.KullancıBakiye">
+              <MappingFragment StoreEntitySet="KullancıBakiye">
+                <ScalarProperty Name="KullancıBakiyeID" ColumnName="KullancıBakiyeID" />
+                <ScalarProperty Name="kBakiye" ColumnName="kBakiye" />
+                <ScalarProperty Name="kBakiyeYüklemeTarih" ColumnName="kBakiyeYüklemeTarih" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ögrenciBakiye">
-            <EntityTypeMapping TypeName="Model.ögrenciBakiye">
-              <MappingFragment StoreEntitySet="ögrenciBakiye">
-                <ScalarProperty Name="ögrenciBakiyeID" ColumnName="ögrenciBakiyeID" />
-                <ScalarProperty Name="ögrenciBakiye1" ColumnName="ögrenciBakiye" />
-                <ScalarProperty Name="ögrenciBakiyeYüklemeTarih" ColumnName="ögrenciBakiyeYüklemeTarih" />
+          <EntitySetMapping Name="Kullanıcı">
+            <EntityTypeMapping TypeName="Model.Kullanıcı">
+              <MappingFragment StoreEntitySet="Kullanıcı">
+                <ScalarProperty Name="KullanıcıID" ColumnName="KullanıcıID" />
+                <ScalarProperty Name="kAd" ColumnName="kAd" />
+                <ScalarProperty Name="kSoyad" ColumnName="kSoyad" />
+                <ScalarProperty Name="kTc" ColumnName="kTc" />
+                <ScalarProperty Name="kDogumYıl" ColumnName="kDogumYıl" />
+                <ScalarProperty Name="kDurum" ColumnName="kDurum" />
+                <ScalarProperty Name="kYetkiID" ColumnName="kYetkiID" />
+                <ScalarProperty Name="KullanıcıBakiye" ColumnName="KullanıcıBakiye" />
+                <ScalarProperty Name="kSifre" ColumnName="kSifre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Personel">
-            <EntityTypeMapping TypeName="Model.Personel">
-              <MappingFragment StoreEntitySet="Personel">
-                <ScalarProperty Name="PersonelTCNo" ColumnName="PersonelTCNo" />
-                <ScalarProperty Name="personelDogumYıl" ColumnName="personelDogumYıl" />
-                <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
-                <ScalarProperty Name="PersonleID" ColumnName="PersonleID" />
-                <ScalarProperty Name="personelAD" ColumnName="personelAD" />
-                <ScalarProperty Name="PersonleSoyad" ColumnName="PersonleSoyad" />
-                <ScalarProperty Name="PersonelGmail" ColumnName="PersonelGmail" />
-                <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
-                <ScalarProperty Name="PersonelYetkiID" ColumnName="PersonelYetkiID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersonelYetki">
-            <EntityTypeMapping TypeName="Model.PersonelYetki">
-              <MappingFragment StoreEntitySet="PersonelYetki">
-                <ScalarProperty Name="personelYetkiID" ColumnName="personelYetkiID" />
-                <ScalarProperty Name="PersonelYetkiTür" ColumnName="PersonelYetkiTür" />
+          <EntitySetMapping Name="KullanıcıYetki">
+            <EntityTypeMapping TypeName="Model.KullanıcıYetki">
+              <MappingFragment StoreEntitySet="KullanıcıYetki">
+                <ScalarProperty Name="KullancıYetkiID" ColumnName="KullancıYetkiID" />
+                <ScalarProperty Name="KullancıYetkiTür" ColumnName="KullancıYetkiTür" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

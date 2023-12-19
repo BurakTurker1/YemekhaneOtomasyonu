@@ -17,50 +17,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ögrenci">
-      <EntityTypeMapping TypeName="Model.Ögrenci">
-        <MappingFragment StoreEntitySet="Ögrenci">
-          <ScalarProperty Name="ögrenciDoğumYıl" ColumnName="ögrenciDoğumYıl" />
-          <ScalarProperty Name="ögrenciTC" ColumnName="ögrenciTC" />
-          <ScalarProperty Name="ögrenciID" ColumnName="ögrenciID" />
-          <ScalarProperty Name="ÖgrenciAd" ColumnName="ÖgrenciAd" />
-          <ScalarProperty Name="ögrenciSoyad" ColumnName="ögrenciSoyad" />
-          <ScalarProperty Name="ögrenciNumarası" ColumnName="ögrenciNumarası" />
-          <ScalarProperty Name="ögrenciSifre" ColumnName="ögrenciSifre" />
-          <ScalarProperty Name="ögrenciBakiyeID" ColumnName="ögrenciBakiyeID" />
-          <ScalarProperty Name="ögrenciDurum" ColumnName="ögrenciDurum" />
+    <EntitySetMapping Name="KullancıBakiye">
+      <EntityTypeMapping TypeName="Model.KullancıBakiye">
+        <MappingFragment StoreEntitySet="KullancıBakiye">
+          <ScalarProperty Name="KullancıBakiyeID" ColumnName="KullancıBakiyeID" />
+          <ScalarProperty Name="kBakiye" ColumnName="kBakiye" />
+          <ScalarProperty Name="kBakiyeYüklemeTarih" ColumnName="kBakiyeYüklemeTarih" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ögrenciBakiye">
-      <EntityTypeMapping TypeName="Model.ögrenciBakiye">
-        <MappingFragment StoreEntitySet="ögrenciBakiye">
-          <ScalarProperty Name="ögrenciBakiyeID" ColumnName="ögrenciBakiyeID" />
-          <ScalarProperty Name="ögrenciBakiye1" ColumnName="ögrenciBakiye" />
-          <ScalarProperty Name="ögrenciBakiyeYüklemeTarih" ColumnName="ögrenciBakiyeYüklemeTarih" />
+    <EntitySetMapping Name="Kullanıcı">
+      <EntityTypeMapping TypeName="Model.Kullanıcı">
+        <MappingFragment StoreEntitySet="Kullanıcı">
+          <ScalarProperty Name="KullanıcıID" ColumnName="KullanıcıID" />
+          <ScalarProperty Name="kAd" ColumnName="kAd" />
+          <ScalarProperty Name="kSoyad" ColumnName="kSoyad" />
+          <ScalarProperty Name="kTc" ColumnName="kTc" />
+          <ScalarProperty Name="kDogumYıl" ColumnName="kDogumYıl" />
+          <ScalarProperty Name="kDurum" ColumnName="kDurum" />
+          <ScalarProperty Name="kYetkiID" ColumnName="kYetkiID" />
+          <ScalarProperty Name="KullanıcıBakiye" ColumnName="KullanıcıBakiye" />
+          <ScalarProperty Name="kSifre" ColumnName="kSifre" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Personel">
-      <EntityTypeMapping TypeName="Model.Personel">
-        <MappingFragment StoreEntitySet="Personel">
-          <ScalarProperty Name="PersonelTCNo" ColumnName="PersonelTCNo" />
-          <ScalarProperty Name="personelDogumYıl" ColumnName="personelDogumYıl" />
-          <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
-          <ScalarProperty Name="PersonleID" ColumnName="PersonleID" />
-          <ScalarProperty Name="personelAD" ColumnName="personelAD" />
-          <ScalarProperty Name="PersonleSoyad" ColumnName="PersonleSoyad" />
-          <ScalarProperty Name="PersonelGmail" ColumnName="PersonelGmail" />
-          <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
-          <ScalarProperty Name="PersonelYetkiID" ColumnName="PersonelYetkiID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PersonelYetki">
-      <EntityTypeMapping TypeName="Model.PersonelYetki">
-        <MappingFragment StoreEntitySet="PersonelYetki">
-          <ScalarProperty Name="personelYetkiID" ColumnName="personelYetkiID" />
-          <ScalarProperty Name="PersonelYetkiTür" ColumnName="PersonelYetkiTür" />
+    <EntitySetMapping Name="KullanıcıYetki">
+      <EntityTypeMapping TypeName="Model.KullanıcıYetki">
+        <MappingFragment StoreEntitySet="KullanıcıYetki">
+          <ScalarProperty Name="KullancıYetkiID" ColumnName="KullancıYetkiID" />
+          <ScalarProperty Name="KullancıYetkiTür" ColumnName="KullancıYetkiTür" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -26,10 +26,9 @@ namespace YemekhaneOtomasyonu
         }
     
         public virtual DbSet<HaftalıkYemek> HaftalıkYemek { get; set; }
-        public virtual DbSet<Ögrenci> Ögrenci { get; set; }
-        public virtual DbSet<ögrenciBakiye> ögrenciBakiye { get; set; }
-        public virtual DbSet<Personel> Personel { get; set; }
-        public virtual DbSet<PersonelYetki> PersonelYetki { get; set; }
+        public virtual DbSet<KullancıBakiye> KullancıBakiye { get; set; }
+        public virtual DbSet<Kullanıcı> Kullanıcı { get; set; }
+        public virtual DbSet<KullanıcıYetki> KullanıcıYetki { get; set; }
         public virtual DbSet<Yemek> Yemek { get; set; }
     }
 }

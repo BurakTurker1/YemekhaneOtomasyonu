@@ -18,27 +18,20 @@ namespace YemekhaneOtomasyonu
             InitializeComponent();
         }
 
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            frm_ögrenci_menu frm = new frm_ögrenci_menu();
-            frm.Show();
-            this.Hide();
-        }
         Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
 
         private void button1_Click(object sender, EventArgs e)
         {
             int yüklenecek_Bakiye = Convert.ToInt16(txt_bakiye.Text);
-            string ÖgrenciNo = txt_ögrenci_No.Text;
+            string tcNo = txt_tc.Text;
 
-            ögrenciBakiye bakiyeYükle = new ögrenciBakiye();
-           Ögrenci Güncelögrenci =vt.Ögrenci.FirstOrDefault(p => p.ögrenciNumarası == ÖgrenciNo);
-            if(Güncelögrenci != null)
+            KullancıBakiye bakiyeYükle = new KullancıBakiye();
+           Kullanıcı GüncelKullancı =vt.Kullanıcı.FirstOrDefault(p => p.kTc == tcNo);
+            if(GüncelKullancı != null)
             {
-                int güncelBakiye = Güncelögrenci.ögrenciBakiye.ögrenciBakiye1 ?? 0 ;// null değilse devam et anlamında ??
+                int güncelBakiye = GüncelKullancı.KullancıBakiye.kBakiye ?? 0 ;// null değilse devam et anlamında ??
                 güncelBakiye += yüklenecek_Bakiye;
-                Güncelögrenci.ögrenciBakiye.ögrenciBakiye1 = güncelBakiye;
+                GüncelKullancı.KullancıBakiye.kBakiye = güncelBakiye;
                 int sonuc = vt.SaveChanges();
                 if (sonuc>0)
                 {

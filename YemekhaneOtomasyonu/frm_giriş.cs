@@ -12,23 +12,25 @@ namespace YemekhaneOtomasyonu
 {
     public partial class frm_giriş : Form
     {
+        public Kullanıcı GirisYapanKullancı;
         public frm_giriş()
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
+        private void btn_giris_Click(object sender, EventArgs e)
         {
-            frm_ögrenci_giris frm = new frm_ögrenci_giris();
-            frm.Show();
-            this.Hide();
-        }
+            string TcNo = mtxt_Tc.Text;
+            string sifre = txt_sifre.Text;
+            GirisYapanKullancı = vt.Kullanıcı.FirstOrDefault(p => p.kTc == TcNo && p.kSifre == sifre);
+            if (GirisYapanKullancı != null)
+            {
+                frm_Kullanıcı_menu frm = new frm_Kullanıcı_menu(GirisYapanKullancı);
+                frm.Show();
+                this.Hide();
+            }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frm_personel_Giris frm = new frm_personel_Giris();
-            frm.Show();
-            this.Hide();
+
         }
     }
 }

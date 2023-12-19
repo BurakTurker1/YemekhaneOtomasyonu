@@ -35,17 +35,14 @@
             this.txt_yemek_Fiyat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
             this.yemekhaneOtomasyonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yemekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yemekTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter();
             this.yemekisimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yemekfiyatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmb_yemek_ad = new System.Windows.Forms.ComboBox();
             this.yemekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yemek_Fiyat)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource1)).BeginInit();
@@ -120,12 +117,9 @@
             // 
             // yemekhane_OtomasyonDataSet
             // 
-            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
-            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // yemekhaneOtomasyonDataSetBindingSource
             // 
-            this.yemekhaneOtomasyonDataSetBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
             this.yemekhaneOtomasyonDataSetBindingSource.Position = 0;
             // 
             // yemekBindingSource
@@ -135,7 +129,6 @@
             // 
             // yemekTableAdapter
             // 
-            this.yemekTableAdapter.ClearBeforeFill = true;
             // 
             // yemekisimDataGridViewTextBoxColumn
             // 
@@ -188,7 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yemek_Fiyat)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource1)).EndInit();
@@ -205,9 +197,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource yemekhaneOtomasyonDataSetBindingSource;
-        private Yemekhane_OtomasyonDataSet yemekhane_OtomasyonDataSet;
         private System.Windows.Forms.BindingSource yemekBindingSource;
-        private Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter yemekTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekisimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekfiyatDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox cmb_yemek_ad;

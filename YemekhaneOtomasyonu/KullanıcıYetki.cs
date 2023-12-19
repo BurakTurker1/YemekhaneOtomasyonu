@@ -12,18 +12,18 @@ namespace YemekhaneOtomasyonu
     using System;
     using System.Collections.Generic;
     
-    public partial class PersonelYetki
+    public partial class KullanıcıYetki
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PersonelYetki()
+        public KullanıcıYetki()
         {
-            this.Personel = new HashSet<Personel>();
+            this.Kullanıcı = new HashSet<Kullanıcı>();
         }
     
-        public int personelYetkiID { get; set; }
-        public string PersonelYetkiTür { get; set; }
+        public int KullancıYetkiID { get; set; }
+        public string KullancıYetkiTür { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personel> Personel { get; set; }
+        public virtual ICollection<Kullanıcı> Kullanıcı { get; set; }
     }
 }

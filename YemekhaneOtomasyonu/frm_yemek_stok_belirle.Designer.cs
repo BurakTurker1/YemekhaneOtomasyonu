@@ -36,16 +36,13 @@
             this.txt_stok = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dgv_Yemek_Stok = new System.Windows.Forms.DataGridView();
-            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
             this.yemekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yemekTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter();
             this.yemekisimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yemekMiktarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.yemekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Yemek_Stok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -132,17 +129,13 @@
             // 
             // yemekhane_OtomasyonDataSet
             // 
-            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
-            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // yemekBindingSource
             // 
             this.yemekBindingSource.DataMember = "Yemek";
-            this.yemekBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
             // 
             // yemekTableAdapter
             // 
-            this.yemekTableAdapter.ClearBeforeFill = true;
             // 
             // yemekisimDataGridViewTextBoxColumn
             // 
@@ -174,7 +167,6 @@
             // yemekBindingSource1
             // 
             this.yemekBindingSource1.DataMember = "Yemek";
-            this.yemekBindingSource1.DataSource = this.yemekhane_OtomasyonDataSet;
             // 
             // frm_yemek_stok_belirle
             // 
@@ -192,7 +184,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Yemek_Stok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -208,9 +199,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_stok;
         private System.Windows.Forms.DataGridView dgv_Yemek_Stok;
-        private Yemekhane_OtomasyonDataSet yemekhane_OtomasyonDataSet;
         private System.Windows.Forms.BindingSource yemekBindingSource;
-        private Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter yemekTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekisimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekMiktarDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;

@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace YemekhaneOtomasyonu
 {
-    public partial class frm_ögrenci_Sifre_degis : Form
+    public partial class frm_Kullanıcı_sifre_degis : Form
     {
-        public frm_ögrenci_Sifre_degis()
+        public frm_Kullanıcı_sifre_degis()
         {
             InitializeComponent();
         }
 
-        private void btn_ögrenci_sifre_degis_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            string ögrenciNo = txt_ögrenci_no.Text;
+            
+            string tcNo = txt_Tc.Text;
             string eskiSifre = txt_eski_sifre.Text;
             string yeniSifre = txt_yeni_sifre.Text;
 
@@ -27,13 +28,13 @@ namespace YemekhaneOtomasyonu
             {
                 try
                 {
-                    // Veritabanında e-posta ve eski şifre ile personeli bul
-                    Ögrenci ögrenci = vt.Ögrenci.FirstOrDefault(p => p.ögrenciNumarası == ögrenciNo && p.ögrenciSifre == eskiSifre);
+                    // Veritabanında e-posta ve eski şifre ile kullanıcıi bul
+                    Kullanıcı kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.kTc == tcNo && p.kSifre == eskiSifre);
 
-                    if (ögrenci != null)
+                    if (kullanıcı != null)
                     {
-                        // Personel bulundu, şifreyi güncelle
-                        ögrenci.ögrenciSifre = yeniSifre;
+                        // kullanıcı bulundu, şifreyi güncelle
+                        kullanıcı.kSifre = yeniSifre;
                         vt.SaveChanges();
 
                         MessageBox.Show("Şifre başarıyla değiştirildi");
@@ -47,15 +48,10 @@ namespace YemekhaneOtomasyonu
                 {
                     MessageBox.Show("Hata oluştu: " + ex.Message);
                 }
+            
             }
+        
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frm_ögrenci_menu frm = new frm_ögrenci_menu();
-            frm.Show();
-            this.Hide();
-        }
     }
 }
-
