@@ -42,7 +42,6 @@
             this.çıkışYapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAdmin = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hesapİşlermleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreDeğişirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +51,8 @@
             this.bakiyeYükleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreDeğişToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kullanıcıRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yemekRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMuhasebe.SuspendLayout();
             this.menuDiyetisyen.SuspendLayout();
             this.menuAscı.SuspendLayout();
@@ -170,7 +171,6 @@
             this.menuAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem,
-            this.hesapİşlermleriToolStripMenuItem,
             this.raporlarToolStripMenuItem,
             this.şifreDeğişirToolStripMenuItem,
             this.çıkışYapToolStripMenuItem});
@@ -187,15 +187,11 @@
             this.adminToolStripMenuItem.Text = "Personel Ekle";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
-            // hesapİşlermleriToolStripMenuItem
-            // 
-            this.hesapİşlermleriToolStripMenuItem.Name = "hesapİşlermleriToolStripMenuItem";
-            this.hesapİşlermleriToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
-            this.hesapİşlermleriToolStripMenuItem.Text = "Personel Listesi";
-            this.hesapİşlermleriToolStripMenuItem.Click += new System.EventHandler(this.hesapİşlermleriToolStripMenuItem_Click);
-            // 
             // raporlarToolStripMenuItem
             // 
+            this.raporlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kullanıcıRaporlarıToolStripMenuItem,
+            this.yemekRaporlarıToolStripMenuItem});
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
             this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
@@ -264,6 +260,20 @@
             this.toolStripMenuItem1.Text = "Çıkış yap";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
+            // kullanıcıRaporlarıToolStripMenuItem
+            // 
+            this.kullanıcıRaporlarıToolStripMenuItem.Name = "kullanıcıRaporlarıToolStripMenuItem";
+            this.kullanıcıRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.kullanıcıRaporlarıToolStripMenuItem.Text = "Kullanıcı Raporları";
+            this.kullanıcıRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıRaporlarıToolStripMenuItem_Click);
+            // 
+            // yemekRaporlarıToolStripMenuItem
+            // 
+            this.yemekRaporlarıToolStripMenuItem.Name = "yemekRaporlarıToolStripMenuItem";
+            this.yemekRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.yemekRaporlarıToolStripMenuItem.Text = "Yemek Raporları";
+            this.yemekRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.yemekRaporlarıToolStripMenuItem_Click);
+            // 
             // frm_Kullanıcı_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -309,7 +319,6 @@
         private System.Windows.Forms.ToolStripMenuItem diyetisyenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ascıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hesapİşlermleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreDeğişirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreDeğiştirToolStripMenuItem;
@@ -325,5 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem bakiyeYükleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreDeğişToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem kullanıcıRaporlarıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yemekRaporlarıToolStripMenuItem;
     }
 }

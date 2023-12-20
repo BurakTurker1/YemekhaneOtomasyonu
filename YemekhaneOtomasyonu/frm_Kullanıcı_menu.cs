@@ -172,5 +172,19 @@ namespace YemekhaneOtomasyonu
         {
 
         }
+
+        private void kullanıcıRaporlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_kullanıcıRapor frm_KullanıcıRapor = new frm_kullanıcıRapor();
+            frm_KullanıcıRapor.MdiParent = this;
+            frm_KullanıcıRapor.Show();
+        }
+
+        private void yemekRaporlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_yemekRapor frm_YemekRapor = new frm_yemekRapor();
+            frm_YemekRapor.MdiParent = this;
+            frm_YemekRapor.Show();
+        }
     } 
 }
