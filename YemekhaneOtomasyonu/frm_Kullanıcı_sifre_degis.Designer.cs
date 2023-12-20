@@ -35,8 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_eski_sifre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_Tc = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,8 +45,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_eski_sifre);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_Tc);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(327, 106);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(471, 459);
@@ -58,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(191, 316);
+            this.button1.Location = new System.Drawing.Point(205, 294);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 42);
             this.button1.TabIndex = 6;
@@ -68,7 +64,7 @@
             // 
             // txt_yeni_sifre
             // 
-            this.txt_yeni_sifre.Location = new System.Drawing.Point(168, 242);
+            this.txt_yeni_sifre.Location = new System.Drawing.Point(182, 220);
             this.txt_yeni_sifre.Name = "txt_yeni_sifre";
             this.txt_yeni_sifre.Size = new System.Drawing.Size(143, 32);
             this.txt_yeni_sifre.TabIndex = 5;
@@ -76,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 245);
+            this.label3.Location = new System.Drawing.Point(86, 223);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
             this.label3.TabIndex = 4;
@@ -84,7 +80,7 @@
             // 
             // txt_eski_sifre
             // 
-            this.txt_eski_sifre.Location = new System.Drawing.Point(168, 174);
+            this.txt_eski_sifre.Location = new System.Drawing.Point(182, 152);
             this.txt_eski_sifre.Name = "txt_eski_sifre";
             this.txt_eski_sifre.Size = new System.Drawing.Size(143, 32);
             this.txt_eski_sifre.TabIndex = 3;
@@ -92,27 +88,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 177);
+            this.label2.Location = new System.Drawing.Point(88, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Eski Şifre:";
-            // 
-            // txt_Tc
-            // 
-            this.txt_Tc.Location = new System.Drawing.Point(168, 121);
-            this.txt_Tc.Name = "txt_Tc";
-            this.txt_Tc.Size = new System.Drawing.Size(143, 32);
-            this.txt_Tc.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tc:";
             // 
             // frm_Kullanıcı_sifre_degis
             // 
@@ -140,7 +120,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_eski_sifre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_Tc;
-        private System.Windows.Forms.Label label1;
     }
 }

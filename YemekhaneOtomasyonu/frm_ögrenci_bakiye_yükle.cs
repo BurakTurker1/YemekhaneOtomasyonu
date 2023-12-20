@@ -57,7 +57,6 @@ namespace YemekhaneOtomasyonu
             }
             
         }
-
         private void frm_ögrenci_bakiye_yükle_Load(object sender, EventArgs e)
         {
             lbl_bakiye.Text = kullanıcı.KullancıBakiye.kBakiye.ToString();

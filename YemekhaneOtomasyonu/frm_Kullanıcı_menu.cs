@@ -59,7 +59,7 @@ namespace YemekhaneOtomasyonu
         }
         public void sifreDegis()
         {
-            frm_Kullanıcı_sifre_degis sifre_Degis = new frm_Kullanıcı_sifre_degis();
+            frm_Kullanıcı_sifre_degis sifre_Degis = new frm_Kullanıcı_sifre_degis(Kullanıcı);
             sifre_Degis.MdiParent= this;
             sifre_Degis.Show();
         }

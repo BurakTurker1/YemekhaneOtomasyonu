@@ -12,15 +12,19 @@ namespace YemekhaneOtomasyonu
 {
     public partial class frm_Kullanıcı_sifre_degis : Form
     {
+        Kullanıcı Kullanıcı;
         public frm_Kullanıcı_sifre_degis()
         {
             InitializeComponent();
         }
+        public frm_Kullanıcı_sifre_degis(Kullanıcı GirisYapanKullancı)
+        {
+            InitializeComponent();
+            Kullanıcı = GirisYapanKullancı;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string tcNo = txt_Tc.Text;
             string eskiSifre = txt_eski_sifre.Text;
             string yeniSifre = txt_yeni_sifre.Text;
 
@@ -28,13 +32,11 @@ namespace YemekhaneOtomasyonu
             {
                 try
                 {
-                    // Veritabanında e-posta ve eski şifre ile kullanıcıi bul
-                    Kullanıcı kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.kTc == tcNo && p.kSifre == eskiSifre);
+                    Kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.kTc == Kullanıcı.kTc && p.kSifre == eskiSifre);
 
-                    if (kullanıcı != null)
+                    if (Kullanıcı != null)
                     {
-                        // kullanıcı bulundu, şifreyi güncelle
-                        kullanıcı.kSifre = yeniSifre;
+                        Kullanıcı.kSifre = yeniSifre;
                         vt.SaveChanges();
 
                         MessageBox.Show("Şifre başarıyla değiştirildi");
