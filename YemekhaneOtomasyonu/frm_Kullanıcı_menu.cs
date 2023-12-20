@@ -135,7 +135,7 @@ namespace YemekhaneOtomasyonu
 
         private void bakiyeYükleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ögrenci_bakiye_yükle frm_Ögrenci_Bakiye = new frm_ögrenci_bakiye_yükle();
+            frm_ögrenci_bakiye_yükle frm_Ögrenci_Bakiye = new frm_ögrenci_bakiye_yükle(Kullanıcı);
             frm_Ögrenci_Bakiye.MdiParent = this;
             frm_Ögrenci_Bakiye.Show();
         }

@@ -13,6 +13,12 @@ namespace YemekhaneOtomasyonu
     public partial class frm_ögrenci_bakiye_yükle : Form
     {
         Kullanıcı kullanıcı;
+        Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
+        KullancıBakiye kullancıBakiye = new KullancıBakiye();
+        int yeniBakiye;
+        int yüklenecek_Bakiye;
+
+
         public frm_ögrenci_bakiye_yükle()
         {
             InitializeComponent();
@@ -23,39 +29,41 @@ namespace YemekhaneOtomasyonu
             kullanıcı = GirisyapanKullancı;
         }
 
-        Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int yüklenecek_Bakiye = Convert.ToInt16(txt_bakiye.Text);
-            string tcNo = txt_tc.Text;
-
-            KullancıBakiye bakiyeYükle = new KullancıBakiye();
-           Kullanıcı GüncelKullancı =vt.Kullanıcı.FirstOrDefault(p => p.kTc == tcNo);
-            if(GüncelKullancı != null)
+            yüklenecek_Bakiye = Convert.ToInt16(txt_bakiye.Text);
+            kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.KullanıcıID == kullanıcı.KullanıcıID);
+            if(kullanıcı != null)
             {
-                int güncelBakiye = GüncelKullancı.KullancıBakiye.kBakiye ?? 0 ;// null değilse devam et anlamında ??
-                güncelBakiye += yüklenecek_Bakiye;
-                GüncelKullancı.KullancıBakiye.kBakiye = güncelBakiye;
+                yeniBakiye = (int)kullanıcı.KullancıBakiye.kBakiye + yüklenecek_Bakiye;
+                kullanıcı.KullancıBakiye.kBakiye = yeniBakiye;
+                kullanıcı.KullancıBakiye.kBakiyeYüklemeTarih = DateTime.Now;
+
                 int sonuc = vt.SaveChanges();
-                if (sonuc>0)
+                if (sonuc > 0)
                 {
                     MessageBox.Show(yüklenecek_Bakiye + "TL Bakiye Hesabınıza Yüklenmiştir");
-                    lbl_bakiye.Text = güncelBakiye.ToString();
+                    lbl_bakiye.Text = kullanıcı.KullancıBakiye.kBakiye.ToString();
                 }
                 else
                 {
                     MessageBox.Show("Bakiye Yüklenemedi!!!");
                 }
             }
-
+            else
+            {
+                MessageBox.Show("kullanıcı yok");
+            }
+            
         }
 
         private void frm_ögrenci_bakiye_yükle_Load(object sender, EventArgs e)
         {
-            // sayfa yüklendigine ilk bakiye gösterilecek
+            lbl_bakiye.Text = kullanıcı.KullancıBakiye.kBakiye.ToString();
+            lbl_isim.Text = kullanıcı.kAd + " " + kullanıcı.kSoyad;
 
         }
-       
+
     }
 }
