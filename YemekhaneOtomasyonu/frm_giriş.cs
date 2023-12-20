@@ -25,6 +25,8 @@ namespace YemekhaneOtomasyonu
             GirisYapanKullancı = vt.Kullanıcı.FirstOrDefault(p => p.kTc == TcNo && p.kSifre == sifre);
             if (GirisYapanKullancı != null)
             {
+                frm_ögrenci_bakiye_yükle frm_Ögrenci_Bakiye_Yükle = new frm_ögrenci_bakiye_yükle(GirisYapanKullancı);
+                frm_yemek_al frm_Yemek_Al = new frm_yemek_al(GirisYapanKullancı); 
                 frm_Kullanıcı_menu frm = new frm_Kullanıcı_menu(GirisYapanKullancı);
                 frm.Show();
                 this.Hide();

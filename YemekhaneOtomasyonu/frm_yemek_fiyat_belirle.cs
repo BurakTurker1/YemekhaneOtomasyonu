@@ -16,11 +16,6 @@ namespace YemekhaneOtomasyonu
         {
             InitializeComponent();
         }
-
-        private void frm_yemek_fiyat_belirle_Load(object sender, EventArgs e)
-        {
-
-        }
         Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
         private void button1_Click(object sender, EventArgs e)
         {
@@ -30,7 +25,7 @@ namespace YemekhaneOtomasyonu
             Yemek YemekUcret = vt.Yemek.FirstOrDefault(p => p.YemekID == seciliYemek);
             if (YemekUcret != null)
             {
-                YemekUcret.Yemekfiyat =(short) yemekFiyat;
+                YemekUcret.Yemekfiyat = (short)yemekFiyat;
                 int sonuc = vt.SaveChanges();
                 if (sonuc > 0)
                 {
@@ -44,6 +39,13 @@ namespace YemekhaneOtomasyonu
                     MessageBox.Show("Yemek Fiyat Belirlenemedi!!!");
                 }
             }
+        }
+
+        private void frm_yemek_fiyat_belirle_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.Yemek' table. You can move, or remove it, as needed.
+            this.yemekTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.Yemek);
+
         }
     }
 }

@@ -160,6 +160,11 @@
     <Compile Include="Yemek.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Yemekhane_OtomasyonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Yemekhane_OtomasyonDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frm_giriş.resx">
       <DependentUpon>frm_giriş.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Kullanıcı_sifre_degis.resx">
       <DependentUpon>frm_Kullanıcı_sifre_degis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_yemek_al.resx">
+      <DependentUpon>frm_yemek_al.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_yemek_Ekle.resx">
       <DependentUpon>frm_yemek_Ekle.cs</DependentUpon>
@@ -214,6 +222,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Yemekhane_OtomasyonDataSet.xsc">
+      <DependentUpon>Yemekhane_OtomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Yemekhane_OtomasyonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Yemekhane_OtomasyonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Yemekhane_OtomasyonDataSet.xss">
+      <DependentUpon>Yemekhane_OtomasyonDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

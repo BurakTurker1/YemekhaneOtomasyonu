@@ -19,6 +19,8 @@ namespace YemekhaneOtomasyonu
 
         private void frm_yemek_stok_belirle_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.Yemek' table. You can move, or remove it, as needed.
+            this.yemekTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.Yemek);
 
         }
         Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();

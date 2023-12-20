@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_yetki = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,7 +43,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Soyad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
+            this.yemekhaneOtomasyonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kullanıcıYetkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kullanıcıYetkiTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.KullanıcıYetkiTableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kullanıcıYetkiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,7 +77,8 @@
             // 
             // cmb_yetki
             // 
-            this.cmb_yetki.DisplayMember = "PersonelYetkiTür";
+            this.cmb_yetki.DataSource = this.kullanıcıYetkiBindingSource;
+            this.cmb_yetki.DisplayMember = "KullancıYetkiTür";
             this.cmb_yetki.FormattingEnabled = true;
             this.cmb_yetki.Location = new System.Drawing.Point(175, 297);
             this.cmb_yetki.Name = "cmb_yetki";
@@ -177,6 +186,25 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Ad:";
             // 
+            // yemekhane_OtomasyonDataSet
+            // 
+            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
+            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // yemekhaneOtomasyonDataSetBindingSource
+            // 
+            this.yemekhaneOtomasyonDataSetBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
+            this.yemekhaneOtomasyonDataSetBindingSource.Position = 0;
+            // 
+            // kullanıcıYetkiBindingSource
+            // 
+            this.kullanıcıYetkiBindingSource.DataMember = "KullanıcıYetki";
+            this.kullanıcıYetkiBindingSource.DataSource = this.yemekhaneOtomasyonDataSetBindingSource;
+            // 
+            // kullanıcıYetkiTableAdapter
+            // 
+            this.kullanıcıYetkiTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_kullanıcıEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -188,8 +216,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_kullanıcıEkle";
             this.Text = "frm_kullanıcıEkle";
+            this.Load += new System.EventHandler(this.frm_kullanıcıEkle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kullanıcıYetkiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,5 +242,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Soyad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource yemekhaneOtomasyonDataSetBindingSource;
+        private Yemekhane_OtomasyonDataSet yemekhane_OtomasyonDataSet;
+        private System.Windows.Forms.BindingSource kullanıcıYetkiBindingSource;
+        private Yemekhane_OtomasyonDataSetTableAdapters.KullanıcıYetkiTableAdapter kullanıcıYetkiTableAdapter;
     }
 }

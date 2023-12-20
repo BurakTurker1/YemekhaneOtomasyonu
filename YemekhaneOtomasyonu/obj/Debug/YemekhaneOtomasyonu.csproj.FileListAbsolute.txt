@@ -20,3 +20,4 @@ D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\o
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_Kullanıcı_menu.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_Kullanıcı_sifre_degis.resources
 D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_kullanıcıEkle.resources
+D:\Masaüstü klasörler\ProjelerFinal\YemekhaneOtomasyonu\YemekhaneOtomasyonu\obj\Debug\YemekhaneOtomasyonu.frm_yemek_al.resources

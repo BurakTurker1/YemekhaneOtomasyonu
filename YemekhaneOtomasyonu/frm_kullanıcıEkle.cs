@@ -66,5 +66,12 @@ namespace YemekhaneOtomasyonu
             }
 
         }
+
+        private void frm_kullanıcıEkle_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.KullanıcıYetki' table. You can move, or remove it, as needed.
+            this.kullanıcıYetkiTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.KullanıcıYetki);
+
+        }
     }
 }

@@ -12,10 +12,15 @@ namespace YemekhaneOtomasyonu
 {
     public partial class frm_ögrenci_bakiye_yükle : Form
     {
-
+        Kullanıcı kullanıcı;
         public frm_ögrenci_bakiye_yükle()
         {
             InitializeComponent();
+        }
+        public frm_ögrenci_bakiye_yükle(Kullanıcı GirisyapanKullancı)
+        {
+            InitializeComponent();
+            kullanıcı = GirisyapanKullancı;
         }
 
         Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();

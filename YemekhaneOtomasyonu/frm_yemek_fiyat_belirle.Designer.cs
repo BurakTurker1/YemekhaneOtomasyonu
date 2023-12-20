@@ -31,19 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.dgv_yemek_Fiyat = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_yemek_ad = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_yemek_Fiyat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.yemekhaneOtomasyonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
             this.yemekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yemekTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter();
+            this.yemekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.yemekisimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yemekfiyatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmb_yemek_ad = new System.Windows.Forms.ComboBox();
-            this.yemekBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yemek_Fiyat)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -57,14 +58,14 @@
             this.dgv_yemek_Fiyat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.yemekisimDataGridViewTextBoxColumn,
             this.yemekfiyatDataGridViewTextBoxColumn});
-            this.dgv_yemek_Fiyat.DataSource = this.yemekBindingSource;
-            this.dgv_yemek_Fiyat.Location = new System.Drawing.Point(637, 135);
+            this.dgv_yemek_Fiyat.DataSource = this.yemekBindingSource1;
+            this.dgv_yemek_Fiyat.Location = new System.Drawing.Point(611, 187);
             this.dgv_yemek_Fiyat.Name = "dgv_yemek_Fiyat";
             this.dgv_yemek_Fiyat.ReadOnly = true;
             this.dgv_yemek_Fiyat.RowHeadersWidth = 51;
             this.dgv_yemek_Fiyat.RowTemplate.Height = 24;
             this.dgv_yemek_Fiyat.Size = new System.Drawing.Size(314, 296);
-            this.dgv_yemek_Fiyat.TabIndex = 3;
+            this.dgv_yemek_Fiyat.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -73,12 +74,23 @@
             this.groupBox1.Controls.Add(this.txt_yemek_Fiyat);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(202, 90);
+            this.groupBox1.Location = new System.Drawing.Point(176, 142);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(319, 390);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fiyat Belirle";
+            // 
+            // cmb_yemek_ad
+            // 
+            this.cmb_yemek_ad.DataSource = this.yemekBindingSource;
+            this.cmb_yemek_ad.DisplayMember = "Yemekisim";
+            this.cmb_yemek_ad.FormattingEnabled = true;
+            this.cmb_yemek_ad.Location = new System.Drawing.Point(110, 103);
+            this.cmb_yemek_ad.Name = "cmb_yemek_ad";
+            this.cmb_yemek_ad.Size = new System.Drawing.Size(155, 32);
+            this.cmb_yemek_ad.TabIndex = 5;
+            this.cmb_yemek_ad.ValueMember = "YemekID";
             // 
             // button1
             // 
@@ -117,18 +129,22 @@
             // 
             // yemekhane_OtomasyonDataSet
             // 
-            // 
-            // yemekhaneOtomasyonDataSetBindingSource
-            // 
-            this.yemekhaneOtomasyonDataSetBindingSource.Position = 0;
+            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
+            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // yemekBindingSource
             // 
             this.yemekBindingSource.DataMember = "Yemek";
-            this.yemekBindingSource.DataSource = this.yemekhaneOtomasyonDataSetBindingSource;
+            this.yemekBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
             // 
             // yemekTableAdapter
             // 
+            this.yemekTableAdapter.ClearBeforeFill = true;
+            // 
+            // yemekBindingSource1
+            // 
+            this.yemekBindingSource1.DataMember = "Yemek";
+            this.yemekBindingSource1.DataSource = this.yemekhane_OtomasyonDataSet;
             // 
             // yemekisimDataGridViewTextBoxColumn
             // 
@@ -148,40 +164,23 @@
             this.yemekfiyatDataGridViewTextBoxColumn.ReadOnly = true;
             this.yemekfiyatDataGridViewTextBoxColumn.Width = 125;
             // 
-            // cmb_yemek_ad
-            // 
-            this.cmb_yemek_ad.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.yemekBindingSource, "Yemekisim", true));
-            this.cmb_yemek_ad.DataSource = this.yemekBindingSource1;
-            this.cmb_yemek_ad.DisplayMember = "Yemekisim";
-            this.cmb_yemek_ad.FormattingEnabled = true;
-            this.cmb_yemek_ad.Location = new System.Drawing.Point(110, 103);
-            this.cmb_yemek_ad.Name = "cmb_yemek_ad";
-            this.cmb_yemek_ad.Size = new System.Drawing.Size(155, 32);
-            this.cmb_yemek_ad.TabIndex = 5;
-            this.cmb_yemek_ad.ValueMember = "YemekID";
-            // 
-            // yemekBindingSource1
-            // 
-            this.yemekBindingSource1.DataMember = "Yemek";
-            this.yemekBindingSource1.DataSource = this.yemekhaneOtomasyonDataSetBindingSource;
-            // 
             // frm_yemek_fiyat_belirle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(114)))), ((int)(((byte)(57)))));
-            this.ClientSize = new System.Drawing.Size(1152, 571);
+            this.ClientSize = new System.Drawing.Size(1075, 600);
             this.Controls.Add(this.dgv_yemek_Fiyat);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_yemek_fiyat_belirle";
             this.Text = "frm_yemek_fiyat_belirle";
             this.Load += new System.EventHandler(this.frm_yemek_fiyat_belirle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yemek_Fiyat)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yemekhaneOtomasyonDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -192,15 +191,16 @@
 
         private System.Windows.Forms.DataGridView dgv_yemek_Fiyat;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cmb_yemek_ad;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_yemek_Fiyat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource yemekhaneOtomasyonDataSetBindingSource;
+        private Yemekhane_OtomasyonDataSet yemekhane_OtomasyonDataSet;
         private System.Windows.Forms.BindingSource yemekBindingSource;
+        private Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter yemekTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekisimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekfiyatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox cmb_yemek_ad;
         private System.Windows.Forms.BindingSource yemekBindingSource1;
     }
 }

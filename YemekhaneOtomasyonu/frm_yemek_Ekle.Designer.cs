@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_yemek_kalori = new System.Windows.Forms.TextBox();
@@ -35,8 +36,15 @@
             this.txt_yemek_ad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_yemek_kalori = new System.Windows.Forms.DataGridView();
+            this.yemekhane_OtomasyonDataSet = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSet();
+            this.yemekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yemekTableAdapter = new YemekhaneOtomasyonu.Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yemek_kalori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -99,7 +107,12 @@
             // 
             this.dgv_yemek_kalori.AllowUserToAddRows = false;
             this.dgv_yemek_kalori.AllowUserToDeleteRows = false;
+            this.dgv_yemek_kalori.AutoGenerateColumns = false;
             this.dgv_yemek_kalori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_yemek_kalori.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dgv_yemek_kalori.DataSource = this.yemekBindingSource;
             this.dgv_yemek_kalori.Location = new System.Drawing.Point(524, 121);
             this.dgv_yemek_kalori.Name = "dgv_yemek_kalori";
             this.dgv_yemek_kalori.ReadOnly = true;
@@ -107,6 +120,38 @@
             this.dgv_yemek_kalori.RowTemplate.Height = 24;
             this.dgv_yemek_kalori.Size = new System.Drawing.Size(314, 296);
             this.dgv_yemek_kalori.TabIndex = 1;
+            // 
+            // yemekhane_OtomasyonDataSet
+            // 
+            this.yemekhane_OtomasyonDataSet.DataSetName = "Yemekhane_OtomasyonDataSet";
+            this.yemekhane_OtomasyonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // yemekBindingSource
+            // 
+            this.yemekBindingSource.DataMember = "Yemek";
+            this.yemekBindingSource.DataSource = this.yemekhane_OtomasyonDataSet;
+            // 
+            // yemekTableAdapter
+            // 
+            this.yemekTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Yemekisim";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Yemekisim";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "YemekKalori";
+            this.dataGridViewTextBoxColumn2.HeaderText = "YemekKalori";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // frm_yemek_Ekle
             // 
@@ -124,6 +169,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yemek_kalori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekhane_OtomasyonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yemekBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,5 +186,10 @@
         private System.Windows.Forms.DataGridView dgv_yemek_kalori;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekisimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yemekKaloriDataGridViewTextBoxColumn;
+        private Yemekhane_OtomasyonDataSet yemekhane_OtomasyonDataSet;
+        private System.Windows.Forms.BindingSource yemekBindingSource;
+        private Yemekhane_OtomasyonDataSetTableAdapters.YemekTableAdapter yemekTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

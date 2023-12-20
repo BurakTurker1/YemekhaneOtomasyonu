@@ -40,6 +40,11 @@ namespace YemekhaneOtomasyonu
                 case "Aşçı": menuAscı.Visible = true; break;
                 case "Muhasebe": menuMuhasebe.Visible = true; break;
                 case "Öğrenci": menuÖgrenci.Visible = true; break;
+                case "test":menuAdmin.Visible = true;
+                    menuAscı.Visible = true;
+                    menuDiyetisyen.Visible = true;
+                    menuMuhasebe.Visible=true;
+                    menuÖgrenci.Visible=true; break;
                 default: break;
 
             }
@@ -137,7 +142,7 @@ namespace YemekhaneOtomasyonu
 
         private void yemekAlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_yemek_al yemek_Al= new frm_yemek_al();
+            frm_yemek_al yemek_Al= new frm_yemek_al(Kullanıcı);
             yemek_Al.MdiParent = this;
             yemek_Al.Show();
         }
@@ -161,6 +166,11 @@ namespace YemekhaneOtomasyonu
             frm_yemek_fiyat_belirle Yemek_Fiyat = new frm_yemek_fiyat_belirle();
             Yemek_Fiyat.MdiParent= this;
             Yemek_Fiyat.Show();
+        }
+
+        private void frm_Kullanıcı_menu_Load(object sender, EventArgs e)
+        {
+
         }
     } 
 }

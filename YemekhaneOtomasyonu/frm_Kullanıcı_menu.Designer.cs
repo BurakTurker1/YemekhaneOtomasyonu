@@ -43,8 +43,8 @@
             this.menuAdmin = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hesapİşlermleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.şifreDeğişirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.şifreDeğişirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuÖgrenci = new System.Windows.Forms.MenuStrip();
             this.haftalıkYemekListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,18 +194,18 @@
             this.hesapİşlermleriToolStripMenuItem.Text = "Personel Listesi";
             this.hesapİşlermleriToolStripMenuItem.Click += new System.EventHandler(this.hesapİşlermleriToolStripMenuItem_Click);
             // 
+            // raporlarToolStripMenuItem
+            // 
+            this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.raporlarToolStripMenuItem.Text = "Raporlar";
+            // 
             // şifreDeğişirToolStripMenuItem
             // 
             this.şifreDeğişirToolStripMenuItem.Name = "şifreDeğişirToolStripMenuItem";
             this.şifreDeğişirToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.şifreDeğişirToolStripMenuItem.Text = "Şifre Değiştir";
             this.şifreDeğişirToolStripMenuItem.Click += new System.EventHandler(this.şifreDeğişirToolStripMenuItem_Click);
-            // 
-            // raporlarToolStripMenuItem
-            // 
-            this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
-            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.raporlarToolStripMenuItem.Text = "Raporlar";
             // 
             // çıkışYapToolStripMenuItem
             // 
@@ -283,6 +283,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_personel_menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_Kullanıcı_menu_Load);
             this.menuMuhasebe.ResumeLayout(false);
             this.menuMuhasebe.PerformLayout();
             this.menuDiyetisyen.ResumeLayout(false);
