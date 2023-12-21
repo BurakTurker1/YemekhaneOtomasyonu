@@ -26,12 +26,17 @@ namespace YemekhaneOtomasyonu
             string soyad = txt_Soyad.Text.ToUpper();
             string sifre = txt_sifre.Text;
             int yetki = Convert.ToInt16(cmb_yetki.SelectedValue);
-            //MessageBox.Show("yetki:"+yetki);
+            MessageBox.Show("yetki:"+yetki);
 
             KPSPublicSoapClient kps = new KPSPublicSoapClient();
             bool Gercekkisi = kps.TCKimlikNoDogrula(tcNo, isim, soyad, Dogumyıl);
             if (Gercekkisi == true)
             {
+                // Bakiye bilgileri
+                KullancıBakiye bakiye = new KullancıBakiye();
+                bakiye.kBakiye = 0;
+                bakiye.kBakiyeYüklemeTarih = DateTime.Now;
+
                 //kullancı bilgileri
                 Kullanıcı yeniKullanıcı = new Kullanıcı();
                 yeniKullanıcı.kTc = tcNo.ToString();
@@ -42,10 +47,9 @@ namespace YemekhaneOtomasyonu
                 yeniKullanıcı.kYetkiID = yetki;
                 yeniKullanıcı.kDurum = true;
 
-                // Bakiye bilgileri
-                KullancıBakiye bakiye =new KullancıBakiye();
-                bakiye.kBakiye = 0;
-                bakiye.kBakiyeYüklemeTarih = DateTime.Now;
+                // bağlama
+                yeniKullanıcı.KullancıBakiye = bakiye;
+                
 
                 vt.KullancıBakiye.Add(bakiye);
                 vt.Kullanıcı.Add(yeniKullanıcı);
@@ -54,6 +58,7 @@ namespace YemekhaneOtomasyonu
                 if (sonuc > 0)
                 {
                     MessageBox.Show("Kullancı Doğrulandı ve Kayıt Başarıyla Yapıldı!");
+                    
                 }
                 else
                 {
@@ -69,6 +74,8 @@ namespace YemekhaneOtomasyonu
 
         private void frm_kullanıcıEkle_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.KullanıcıYetki' table. You can move, or remove it, as needed.
+            this.kullanıcıYetkiTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.KullanıcıYetki);
             // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.KullanıcıYetki' table. You can move, or remove it, as needed.
             this.kullanıcıYetkiTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.KullanıcıYetki);
 

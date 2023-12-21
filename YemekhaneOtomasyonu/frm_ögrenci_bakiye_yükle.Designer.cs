@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_isim = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_bakiye = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_bakiye = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbl_isim = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +54,24 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bakiye Yükle";
+            // 
+            // lbl_isim
+            // 
+            this.lbl_isim.AutoSize = true;
+            this.lbl_isim.Location = new System.Drawing.Point(134, 120);
+            this.lbl_isim.Name = "lbl_isim";
+            this.lbl_isim.Size = new System.Drawing.Size(61, 24);
+            this.lbl_isim.TabIndex = 6;
+            this.lbl_isim.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(73, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 24);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "İsim:";
             // 
             // button1
             // 
@@ -102,40 +119,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bakiye:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "İsim:";
-            // 
-            // lbl_isim
-            // 
-            this.lbl_isim.AutoSize = true;
-            this.lbl_isim.Location = new System.Drawing.Point(134, 120);
-            this.lbl_isim.Name = "lbl_isim";
-            this.lbl_isim.Size = new System.Drawing.Size(61, 24);
-            this.lbl_isim.TabIndex = 6;
-            this.lbl_isim.Text = "label5";
-            // 
             // frm_ögrenci_bakiye_yükle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(114)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(1099, 580);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -145,7 +134,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -158,6 +146,5 @@
         private System.Windows.Forms.TextBox txt_bakiye;
         private System.Windows.Forms.Label lbl_isim;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
     }
 }

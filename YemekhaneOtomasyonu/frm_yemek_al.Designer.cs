@@ -111,9 +111,9 @@
             this.lbl_güncel_Bakiye.AutoSize = true;
             this.lbl_güncel_Bakiye.Location = new System.Drawing.Point(811, 82);
             this.lbl_güncel_Bakiye.Name = "lbl_güncel_Bakiye";
-            this.lbl_güncel_Bakiye.Size = new System.Drawing.Size(44, 24);
+            this.lbl_güncel_Bakiye.Size = new System.Drawing.Size(20, 24);
             this.lbl_güncel_Bakiye.TabIndex = 5;
-            this.lbl_güncel_Bakiye.Text = "0 TL";
+            this.lbl_güncel_Bakiye.Text = "0";
             // 
             // label2
             // 

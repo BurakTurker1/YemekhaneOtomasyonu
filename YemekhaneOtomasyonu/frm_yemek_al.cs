@@ -16,6 +16,7 @@ namespace YemekhaneOtomasyonu
         Yemekhane_OtomasyonEntities vt = new Yemekhane_OtomasyonEntities();
         KullancıBakiye kullancıBakiye = new KullancıBakiye();
         int YemekFiyat;
+        decimal yeniBakiye;
         public frm_yemek_al()
         {
             InitializeComponent();
@@ -26,15 +27,13 @@ namespace YemekhaneOtomasyonu
             InitializeComponent();
             kullanıcı = GirisyapanKullancı;
         }
-
-        private void frm_yemek_al_Load(object sender, EventArgs e)
+        public void sayfaYenile()
         {
-            // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.Yemek' table. You can move, or remove it, as needed.
-            this.yemekTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.Yemek);
-
-            lbl_güncel_Bakiye.Text = kullanıcı.KullancıBakiye.kBakiye + "TL";
-
+            //yenileme
+            this.Invalidate();
+            this.Update();
         }
+        
         public void Temizle()
         {
             lst_Yemek_Sepet.Items.Clear();
@@ -63,24 +62,40 @@ namespace YemekhaneOtomasyonu
 
         private void btn_ödeme_yap_Click(object sender, EventArgs e)
         {
-
-            kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.KullanıcıID == kullanıcı.KullanıcıID);
-
-            decimal yeniBakiye = Convert.ToDecimal(kullanıcı.KullancıBakiye.kBakiye - YemekFiyat);
-            kullanıcı.KullancıBakiye.kBakiye = Convert.ToInt16(yeniBakiye);
-
-            int sonuc = vt.SaveChanges();
-
-            if (sonuc > 0)
+            if ( kullanıcı.KullancıBakiye.kBakiye >= YemekFiyat)
             {
-                //MessageBox.Show("İşlem başarılı");
-                lbl_güncel_Bakiye.Text = kullanıcı.KullancıBakiye.kBakiye + "TL";
-                Temizle();
+                kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.KullanıcıID == kullanıcı.KullanıcıID);
+                yeniBakiye = Convert.ToDecimal(kullanıcı.KullancıBakiye.kBakiye - YemekFiyat);
+                kullanıcı.KullancıBakiye.kBakiye = Convert.ToInt16(yeniBakiye);
+            
+          
+                    int sonuc = vt.SaveChanges();
+
+                if (sonuc > 0)
+                {
+                    //MessageBox.Show("İşlem başarılı");
+                    lbl_güncel_Bakiye.Text = kullanıcı.KullancıBakiye.kBakiye + "TL";
+                    Temizle();
+                }
+                else
+                {
+                    MessageBox.Show("İşlem Başarısız");
+                }
             }
             else
             {
-                MessageBox.Show("İşlem Başarısız");
+                MessageBox.Show("Yetersiz Bakiye");
             }
         }
+        private void frm_yemek_al_Load(object sender, EventArgs e)
+        {
+            lbl_güncel_Bakiye.Text = kullanıcı.KullancıBakiye.kBakiye.ToString();
+            // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.Yemek' table. You can move, or remove it, as needed.
+            this.yemekTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.Yemek);
+            //sayfaYenile();
+        }
+
+
     }
 }
+

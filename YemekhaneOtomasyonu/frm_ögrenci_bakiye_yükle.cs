@@ -32,7 +32,7 @@ namespace YemekhaneOtomasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            yüklenecek_Bakiye = Convert.ToInt16(txt_bakiye.Text);
+            yüklenecek_Bakiye = Convert.ToInt32(txt_bakiye.Text);
             kullanıcı = vt.Kullanıcı.FirstOrDefault(p => p.KullanıcıID == kullanıcı.KullanıcıID);
             if(kullanıcı != null)
             {
