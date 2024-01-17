@@ -12,15 +12,20 @@ namespace YemekhaneOtomasyonu
 {
     public partial class frm_yemek_Ekle : Form
     {
+        private BindingSource bindingSource;
         public frm_yemek_Ekle()
         {
             InitializeComponent();
+            bindingSource = new BindingSource();
         }
 
         private void frm_yemek_Ekle_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'yemekhane_OtomasyonDataSet.Yemek' table. You can move, or remove it, as needed.
             this.yemekTableAdapter.Fill(this.yemekhane_OtomasyonDataSet.Yemek);
+
+            bindingSource.DataSource = vt.Yemek.ToList();
+            dgv_yemek_kalori.DataSource = bindingSource;
 
         }
 
@@ -29,22 +34,20 @@ namespace YemekhaneOtomasyonu
         {
             string yemekAd = txt_yemek_ad.Text;
             int yemekKalori = Convert.ToInt16(txt_yemek_kalori.Text);
-             Yemek yeniYemek = new Yemek();
+            Yemek yeniYemek = new Yemek();
             yeniYemek.Yemekisim = yemekAd;
-            yeniYemek.YemekKalori = (short) yemekKalori;
-           vt.Yemek.Add(yeniYemek);
+            yeniYemek.YemekKalori = (short)yemekKalori;
+            vt.Yemek.Add(yeniYemek);
             int sonuc = vt.SaveChanges();
             if (sonuc > 0)
             {
                 MessageBox.Show("Yemek Eklendi");
-                dgv_yemek_kalori.DataSource = null; // Veri kaynağını temizle
-                dgv_yemek_kalori.DataSource = vt.Yemek.ToList(); // Yeni veri kaynağını ata
-                dgv_yemek_kalori.Refresh();
+                bindingSource.DataSource = vt.Yemek.ToList();
             }
             else
-            {
-                MessageBox.Show("Yemek Eklenemedi!!!");
-            }
+             {
+                    MessageBox.Show("Yemek Eklenemedi!!!");
+             }
         }
     }
 }

@@ -92,12 +92,6 @@
     <Compile Include="frm_giriş.Designer.cs">
       <DependentUpon>frm_giriş.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Haftalık_yemek_listele.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Haftalık_yemek_listele.Designer.cs">
-      <DependentUpon>frm_Haftalık_yemek_listele.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_kullanıcıEkle.cs">
       <SubType>Form</SubType>
     </Compile>

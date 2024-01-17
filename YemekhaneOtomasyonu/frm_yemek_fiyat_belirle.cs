@@ -12,6 +12,7 @@ namespace YemekhaneOtomasyonu
 {
     public partial class frm_yemek_fiyat_belirle : Form
     {
+
         public frm_yemek_fiyat_belirle()
         {
             InitializeComponent();
@@ -30,8 +31,8 @@ namespace YemekhaneOtomasyonu
                 if (sonuc > 0)
                 {
                     MessageBox.Show("Yemek Fiyat Belirlendi");
-                    dgv_yemek_Fiyat.DataSource = null; // Veri kaynağını temizle
-                    dgv_yemek_Fiyat.DataSource = vt.Yemek.ToList(); // Yeni veri kaynağını ata
+                    dgv_yemek_Fiyat.DataSource = null; 
+                    dgv_yemek_Fiyat.DataSource = vt.Yemek.ToList(); 
                     dgv_yemek_Fiyat.Refresh();
                 }
                 else

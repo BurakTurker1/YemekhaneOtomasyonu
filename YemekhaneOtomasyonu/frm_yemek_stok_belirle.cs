@@ -33,7 +33,7 @@ namespace YemekhaneOtomasyonu
             Yemek gelenYemek = vt.Yemek.FirstOrDefault(p => p.YemekID == seciliYemek);
             if(gelenYemek != null)
             {
-                gelenYemek.yemekMiktar = YemekStok;
+                gelenYemek.yemekMiktar += YemekStok;
                // vt.Yemek.Add(gelenYemek);
                 int sonuc = vt.SaveChanges();
                 if (sonuc > 0)

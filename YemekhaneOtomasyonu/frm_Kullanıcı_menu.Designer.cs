@@ -43,16 +43,15 @@
             this.menuAdmin = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kullanıcıRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yemekRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreDeğişirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuÖgrenci = new System.Windows.Forms.MenuStrip();
-            this.haftalıkYemekListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yemekAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bakiyeYükleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreDeğişToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.kullanıcıRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yemekRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMuhasebe.SuspendLayout();
             this.menuDiyetisyen.SuspendLayout();
             this.menuAscı.SuspendLayout();
@@ -196,6 +195,20 @@
             this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
             // 
+            // kullanıcıRaporlarıToolStripMenuItem
+            // 
+            this.kullanıcıRaporlarıToolStripMenuItem.Name = "kullanıcıRaporlarıToolStripMenuItem";
+            this.kullanıcıRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.kullanıcıRaporlarıToolStripMenuItem.Text = "Kullanıcı Raporları";
+            this.kullanıcıRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıRaporlarıToolStripMenuItem_Click);
+            // 
+            // yemekRaporlarıToolStripMenuItem
+            // 
+            this.yemekRaporlarıToolStripMenuItem.Name = "yemekRaporlarıToolStripMenuItem";
+            this.yemekRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.yemekRaporlarıToolStripMenuItem.Text = "Yemek Raporları";
+            this.yemekRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.yemekRaporlarıToolStripMenuItem_Click);
+            // 
             // şifreDeğişirToolStripMenuItem
             // 
             this.şifreDeğişirToolStripMenuItem.Name = "şifreDeğişirToolStripMenuItem";
@@ -215,7 +228,6 @@
             this.menuÖgrenci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(86)))), ((int)(((byte)(107)))));
             this.menuÖgrenci.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuÖgrenci.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.haftalıkYemekListesiToolStripMenuItem,
             this.yemekAlToolStripMenuItem,
             this.bakiyeYükleToolStripMenuItem,
             this.şifreDeğişToolStripMenuItem,
@@ -225,12 +237,6 @@
             this.menuÖgrenci.Size = new System.Drawing.Size(1100, 28);
             this.menuÖgrenci.TabIndex = 5;
             this.menuÖgrenci.Text = "menuStrip1";
-            // 
-            // haftalıkYemekListesiToolStripMenuItem
-            // 
-            this.haftalıkYemekListesiToolStripMenuItem.Name = "haftalıkYemekListesiToolStripMenuItem";
-            this.haftalıkYemekListesiToolStripMenuItem.Size = new System.Drawing.Size(166, 24);
-            this.haftalıkYemekListesiToolStripMenuItem.Text = "Haftalık Yemek Listesi";
             // 
             // yemekAlToolStripMenuItem
             // 
@@ -259,20 +265,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(81, 24);
             this.toolStripMenuItem1.Text = "Çıkış yap";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // kullanıcıRaporlarıToolStripMenuItem
-            // 
-            this.kullanıcıRaporlarıToolStripMenuItem.Name = "kullanıcıRaporlarıToolStripMenuItem";
-            this.kullanıcıRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.kullanıcıRaporlarıToolStripMenuItem.Text = "Kullanıcı Raporları";
-            this.kullanıcıRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıRaporlarıToolStripMenuItem_Click);
-            // 
-            // yemekRaporlarıToolStripMenuItem
-            // 
-            this.yemekRaporlarıToolStripMenuItem.Name = "yemekRaporlarıToolStripMenuItem";
-            this.yemekRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.yemekRaporlarıToolStripMenuItem.Text = "Yemek Raporları";
-            this.yemekRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.yemekRaporlarıToolStripMenuItem_Click);
             // 
             // frm_Kullanıcı_menu
             // 
@@ -329,7 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuÖgrenci;
-        private System.Windows.Forms.ToolStripMenuItem haftalıkYemekListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yemekAlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bakiyeYükleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreDeğişToolStripMenuItem;
