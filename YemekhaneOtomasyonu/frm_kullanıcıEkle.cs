@@ -26,7 +26,7 @@ namespace YemekhaneOtomasyonu
             string soyad = txt_Soyad.Text.ToUpper();
             string sifre = txt_sifre.Text;
             int yetki = Convert.ToInt16(cmb_yetki.SelectedValue);
-            MessageBox.Show("yetki:"+yetki);
+            //MessageBox.Show("yetki:"+yetki);
 
             KPSPublicSoapClient kps = new KPSPublicSoapClient();
             bool Gercekkisi = kps.TCKimlikNoDogrula(tcNo, isim, soyad, Dogumyıl);
